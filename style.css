@@ -1,0 +1,144 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    display: flex;
+    width: 90%;
+    margin: auto;
+    height: 10vh;
+    align-items: center;
+}
+
+.logo-container, .nav-links, .login-container {
+    display: flex;
+}
+
+.logo-container {
+    flex: 1;
+}
+
+.logo-container img{
+    width: 100%;
+    max-width: 130px;
+    min-width: 90px;
+    height: auto;
+    margin-top: 30px;
+}
+
+nav {
+    flex: 4;
+}
+
+.nav-links {
+    justify-content: space-around;
+    list-style-type: none;
+    align-items: flex-start;
+}
+
+.nav-link {
+    color: #000000;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.login-container {
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.login-link {
+    color: #000000;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border: solid;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    background: #77A6F7;
+    color: white;
+    border-radius: 9px;
+    white-space: nowrap;
+}
+
+.presentation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+    margin: auto;
+    min-height: 80vh;
+    margin-top: 50px;
+}
+
+.introduction {
+    animation: drop 1.5s ease;
+}
+
+.intro-title h1{
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.intro-text p{
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.cta button{
+    font-size: 1.4rem;
+    border: solid;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    background: #77A6F7;
+    color: white;
+    border-radius: 9px;
+    
+}
+
+.cover {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cover img {
+    height: 35vh;
+    animation: drop 1.5s ease;
+}
+
+.background {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    z-index: -1;
+    
+}
+
+@keyframes drop {
+    0% {
+        opacity: 0;
+        transform: translateY(-80px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    * {
+        font-size: 14px;
+    }
+}
+
+
