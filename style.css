@@ -44,6 +44,12 @@ nav {
 }
 
 .nav-link {
+    color: gray;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.nav-link:hover {
     color: #000000;
     text-decoration: none;
     font-size: 1.2rem;
@@ -67,6 +73,10 @@ nav {
     color: white;
     border-radius: 9px;
     white-space: nowrap;
+}
+
+.login-link:hover {
+    color: rgba(255, 255, 255, 0.750);
 }
 
 .presentation {
@@ -106,6 +116,10 @@ nav {
     
 }
 
+.cta button:hover {
+    color: rgba(255, 255, 255, 0.750);
+}
+
 .cover {
     display: flex;
     justify-content: flex-end;
@@ -140,5 +154,45 @@ nav {
         font-size: 14px;
     }
 }
+
+/* Side Nav menu styling*/
+
+.sidenav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(211, 211, 211, 0.356);
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    border-bottom: 1px solid white;
+    text-decoration: none;
+    font-size: 25px;
+    color: #504e4ebe;
+    display: block;
+    transition: 0.3s;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .sidenav a:hover {
+    color: black;
+  }
+  
+  /* Page content */
+  .main {
+    margin-left: 275px; /* Same as the width of the sidenav */
+    padding-top: 10px;
+  }
+
+  main .heading .title h1 {
+    font-size: 30px;
+  }
+
+  
 
 
