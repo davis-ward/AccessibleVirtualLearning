@@ -378,6 +378,11 @@ nav {
     transform: translateX(20%);
 }
 
+#relationship {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
 /* styling for the student page nav bar */
 
 .side-nav-container {
