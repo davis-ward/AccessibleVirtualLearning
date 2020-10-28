@@ -1,0 +1,27 @@
+/* add margin to the left and right of navbar */
+/* and change the font of the navbar */
+.navbar-nav {
+    margin-left: 75px;
+    margin-right: 75px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+}
+
+.navbar-nav .btn {
+    font-size: 1.3rem;
+}
+
+nav .mr-auto .nav-item {
+    margin-left: 50px;
+}
+
+.jumbotron {
+    font-family: 'Poppins', sans-serif;
+}
+
+.side-navbar {
+    width: 250px;
+}
+
+
+

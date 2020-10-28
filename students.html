@@ -4,61 +4,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AccessibleVirtualLearning</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="studentstyle.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-            <img src="./images/logo_transparent 1.png" alt="logo">
-        </div>
-        <nav>
-            <ul class="nav-links">
-                <li><a class="nav-link" href="#">About</a></li>
-                <li><a class="nav-link" href="educators.html">Educators</a></li>
-                <li><a class="nav-link" href="students.html">Students</a></li>
-                <li><a class="nav-link" href="#">Resources</a></li>
-                <li><a class="nav-link" href="#">News</a></li>
-                <li><a class="nav-link" href="#">Blog</a></li>
-            </ul>
-        </nav>
-        <form action="./login.html" class="login-container">
-                <button type="submit" class="login-link">Sign In</button>
-        </form>
-    </header>
 
-        <div class="side-nav-container">
-            <ul class="side-nav-links">
-                <li><a href="#">Portal</a></li>
-                <li><a href="#">Courses</a></li>
-                <li><a href="#">Activites</a></li>
-                <li><a href="#">Links</a></li>
-                <li><a href="#">Classmates</a></li>
+    <div class="side-navbar">
+      <ul class="list-group">
+        <li class="list-group-item">sidenav item 1</li>
+        <li class="list-group-item">sidenav item 2</li>
+        <li class="list-group-item">sidenav item 3</li>
+        <li class="list-group-item">sidenav item 4</li>
+        <li class="list-group-item">sidenav item 5</li>
+      </ul>
+    </div>
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="home.html">
+            <img src="images/logo_transparent 1.png" class="img-fluid" alt="AVL logo" width="70" height="95">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Educators</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Students <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Resources</a>
+              </li>
             </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <button type="button" class="btn btn-primary mr-auto">Log In</button>
+                </li>
+            </ul>
+          </div>
+    </nav>
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Welcome to the Students Page.</h1>
+          <p class="lead">Take a look at some of the resources below to help you get started.</p>
         </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md">
+                <div class="card" style="width: 18rem;">
+                    <img src="./images/undraw_code_review_l1q9.svg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Need Help programming?</h5>
+                      <p class="card-text">Navigate to the resources page below to find a place to get started or get help.</p>
+                      <a href="#" class="btn btn-primary">Resources</a>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md">
+                <div class="card" style="width: 18rem;">
+                    <img src="./images/undraw_game_world_0o6q.svg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Need Some Inspiration?</h5>
+                      <p class="card-text">See examples of what other students have made in the past.</p>
+                      <a href="#" class="btn btn-primary">Projects</a>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md">
+                <div class="card" style="width: 18rem;">
+                    <img src="./images/undraw_secure_login_pdn4.svg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Don't Have an Account Yet?</h5>
+                      <p class="card-text">Click the button below to make one.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
 
     
-        <div class="students-main-container">
-            <h1>Welcome to the Student's portal.</h1>
-            <div class="students-main-portal-container">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente consequatur itaque, architecto, est ullam fugiat voluptate impedit quia dolore iusto consectetur eligendi esse ex! Nam voluptate iste eligendi blanditiis quis.</p>
-            </div>
-            <div class="students-main-portal-container">
-                <img src="images/undraw_Detailed_information_re_qmuc.svg" alt="portal-image">
-            </div>
-            <div class="students-main-portal-container">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente consequatur itaque, architecto, est ullam fugiat voluptate impedit quia dolore iusto consectetur eligendi esse ex! Nam voluptate iste eligendi blanditiis quis.</p>
-            </div>
-            <div class="students-main-portal-container">
-                <h2>Lorem ipsum</h2>
-            </div>
-            <div class="students-main-portal-container">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente consequatur itaque, architecto, est ullam fugiat voluptate impedit quia dolore iusto consectetur eligendi esse ex! Nam voluptate iste eligendi blanditiis quis.</p>
-            </div>
-            <div class="students-main-portal-container">
-                <h2>Lorem ipsum</h2>
-            </div>
-        </div>
     
 </body>
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </html>
