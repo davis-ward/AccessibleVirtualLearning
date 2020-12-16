@@ -4,48 +4,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AccessibleVirtualLearning</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="homestyle.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-            <img src="./images/logo_transparent 1.png" alt="logo">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="home.html">
+                <img src="images/logo_transparent 1.png" class="img-fluid" alt="AVL logo" width="70" height="95">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="home.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="educators.html">Educators</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="students.html">Students</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Resources</a>
+                  </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="login.html" class="btn btn-primary mr-auto">Log In</a>
+                    </li>
+                </ul>
+              </div>
+    </nav>
+
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-4">Welcome to AccessibleVirtualLearning.</h1>
+            <p class="lead">A platform to teach K-12 students computer science while providing accessibility features.</p>
+            <hr class="my-4">
+            <p>Click to link below to get started and make an account.</p>
+            <a class="btn btn-primary btn-lg" href="login.html" role="button">Get Started</a>
         </div>
-        <nav>
-            <ul class="nav-links">
-                <li><a class="nav-link" href="about.html">About</a></li>
-                <li><a class="nav-link" href="educators.html">Educators</a></li>
-                <li><a class="nav-link" href="students.html">Students</a></li>
-                <li><a class="nav-link" href="#">Resources</a></li>
-                <li><a class="nav-link" href="#">News</a></li>
-                <li><a class="nav-link" href="#">Blog</a></li>
-            </ul>
-        </nav>
-        <form action="./login.html" class="login-container">
-                <button type="submit" class="login-link">Sign In</button>
-        </form>
-    </header>
+    </div>
 
-    <main>
-        <section class="presentation">
-            <div class="introduction">
-                <div class="intro-title">
-                    <h1>Welcome to AccessibleVirtualLearning.</h1>
-                </div>
-                <div class="intro-text">
-                    <p>A platform to teach K-12 students computer science while providing accessibility features.</p>
-                </div>
-                <div class="cta">
-                    <button class="cta-start">Get Started</button>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <img src="images/user_profile.svg">
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Staying Connected</h4>
+                        <p class="card-text">Do you have an account with Accessible Virtual Learning? If not, please make an account to stay connected with us. We would love to learn more about your needs and interest. This also connects you with other students learning through AVL!</p>
+                        <a href="" class="btn btn-primary">Register with AVL</a>
+                    </div>
                 </div>
             </div>
-            <div class="cover">
-                <img src="./images/undraw_programmer_imem 1.png" alt="programmer">
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Learning Resources</h4>
+                        <p class="card-text">Not sure where to start and what to learn? AVL provides many free resources that are perfect for virtual learning and completely for beginniers. No prior experience is required!</p>
+                        <a href="" class="btn btn-primary">Virtual Resources</a>
+                    </div>
+                </div>
             </div>
-        </section>
-
-        <img class="background" src="./images/Vector 1.svg" alt="background">
-    </main>
+            <div class="col">
+                <img src="images/mention.svg">
+            </div>
+        <div class="row">
+            <div class="col">
+                <img src="images/share.svg">
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Exploring Accessibility</h4>
+                        <p class="card-text">AVL is a virtual learning platform that provides many accessibility features. Accessibility is important to us because we want everyone to be able to use this platform. Learning should be for all!</p>
+                        <a href="" class="btn btn-primary">Learn about AVL's Accessibility</a>
+                    </div>
+                </div>
+        </div>
+    </div>
+    
 </body>
 </html>
