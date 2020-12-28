@@ -1,0 +1,77 @@
+/* add spacing to left and right of navbar, change font and font-size of links */
+.navbar-nav {
+    margin-left: 75px;
+    margin-right: 75px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+}
+
+/* change the login buttom */
+.navbar-nav .btn {
+    font-size: 1.3rem;
+}
+
+/* add spacing between nav links */
+.navbar-nav .nav-item  {
+    margin-left: 40px;
+}
+
+/* change the font of the jumbotron */
+.jumbotron {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* add some space between header and first paragraph */
+.lead {
+    margin-top: 50px;
+}
+
+/* change font of both paragraphs in jumbotron */
+.jumbotron .container p {
+    font-size: 1.2rem;
+}
+
+/* add some space between second paragraph and button in jumbotron */
+.jumbotron .container .btn {
+    margin-top: 10px;
+}
+
+.container .row .col img {
+    width: 80%;
+    height: auto;
+    object-fit: cover;
+}
+
+.row .col .card {
+    text-align: center;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.card-title {
+    font-size: 1.6rem;
+}
+
+.card-text {
+    margin-top: 5%;
+    font-size: 1.2rem;
+}
+
+.card .btn {
+    margin-top: 5%;
+}
+
+.container .row .col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .row {
+    margin-top: 75px;
+    margin-bottom: 75px;
+}
+
+
+
