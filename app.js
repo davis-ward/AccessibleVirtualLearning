@@ -1,31 +1,31 @@
 var createError = require('http-errors');
 var express = require('express');
-var mysql = require('mysql');
+//var mysql = require('mysql');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-//var dashboardRouter = require('./routes/dashboard'); // import routes for "dashboard" area of site
+var dashboardRouter = require('./routes/dashboard');
 
-const password = process.env.PASSWORD;
+//const password = process.env.PASSWORD;
 
 var app = express();
 
 // connect to mysql database
-var connection = mysql.createConnection({
-  host: 'pca.eng.auburn.edu',
-  port: '3306',
-  user: 'root',
-  password: password,
-  database: 'accessible_virtual_learning'
-});
+//var connection = mysql.createConnection({
+//  host: 'pca.eng.auburn.edu',
+//  port: '3306',
+//  user: 'root',
+//  password: password,
+//  database: 'accessible_virtual_learning'
+//});
 
 // throw error if bad connection
-connection.connect(function(err) {
-  if (err) throw err;
-  console.log("Database connected.");
-});
+//connection.connect(function(err) {
+//  if (err) throw err;
+//  console.log("Database connected.");
+//});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -40,6 +40,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // add middleware for routers
 app.use('/', indexRouter);
+app.use('/dashboard', dashboardRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
