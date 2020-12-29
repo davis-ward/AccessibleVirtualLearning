@@ -1,31 +1,23 @@
 var createError = require('http-errors');
 var express = require('express');
-//var mysql = require('mysql');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var models = require('./models');
+
+//Sync Database
+models.sequelize.sync().then(function() {
+  console.log('Nice! Database looks fine')
+}).catch(function(err) {
+  console.log(err, "Something went wrong with the Database Update!")
+});
 
 var indexRouter = require('./routes/index');
 var dashboardRouter = require('./routes/dashboard');
 
-//const password = process.env.PASSWORD;
 
 var app = express();
 
-// connect to mysql database
-//var connection = mysql.createConnection({
-//  host: 'pca.eng.auburn.edu',
-//  port: '3306',
-//  user: 'root',
-//  password: password,
-//  database: 'accessible_virtual_learning'
-//});
-
-// throw error if bad connection
-//connection.connect(function(err) {
-//  if (err) throw err;
-//  console.log("Database connected.");
-//});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

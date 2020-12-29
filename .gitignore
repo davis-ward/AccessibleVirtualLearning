@@ -60,5 +60,8 @@ typings/
 # next.js build output
 .next
 
-# macos
+# macOS
 .DS_Store
+
+# database connection
+config/
