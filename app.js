@@ -13,7 +13,7 @@ models.sequelize.sync().then(function() {
 });
 
 var indexRouter = require('./routes/index');
-var dashboardRouter = require('./routes/dashboard');
+var usersRouter = require('./routes/users');
 
 
 var app = express();
@@ -32,7 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // add middleware for routers
 app.use('/', indexRouter);
-app.use('/dashboard', dashboardRouter);
+app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
