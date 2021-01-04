@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body>
+    <div class="login-form-container">
+        <div class="container border">
+            <form method="get">
+                <div class="form-group">
+                    <label for="firstNameInput">First Name</label>
+                    <input type="text" name="firstname" class="form-control" id="firstNameInput" placeholder="First Name">
+                </div>
+                <div class="form-group">
+                    <label for="lastNameInput">Last Name</label>
+                    <input type="text" name="lastname" class="form-control" id="lastNameInput" placeholder="Last Name">
+                </div>
+                <div class="form-group">
+                  <label for="emailInput">Email address</label>
+                  <input type="email" name="email" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="name@email.com">
+                </div>
+                <div class="form-group">
+                  <label for="passwordInput">Password</label>
+                  <input type="password" name="password" class="form-control" id="passwordInput" placeholder="********" aria-describedby="passwordHelp">
+                </div>
+                <div class="form-group">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Student or Teacher?
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="studentTeacherDropdownButton">
+                          <a class="dropdown-item" href="#">Student</a>
+                          <a class="dropdown-item" href="#">Teacher</a>
+                        </div>
+                      </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Register</button>
+              </form>
+        </div>
+    </div>
+</body>
+</html>
