@@ -1,9 +1,18 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var models = require('./models');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const models = require('./models');
+const flash = require('connect-flash');
+const session = require('express-session');
+const passport = require('passport');
+
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+
+// Passport config
+require('./config/passport')(passport);
 
 //Sync Database
 models.sequelize.sync().then(function() {
@@ -12,11 +21,8 @@ models.sequelize.sync().then(function() {
   console.log(err, "Something went wrong with the Database Update!")
 });
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 
-
-var app = express();
+const app = express();
 
 
 // view engine setup
@@ -29,6 +35,31 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// add express session middleware
+app.use(
+  session({
+    secret: 'brick house',
+    resave: true,
+    saveUninitialized: true,
+  })
+);
+
+// add passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+// add connect-flash middleware
+app.use(flash());
+
+// global vars for connect-flash
+app.use((req, res, next) => {
+  res.locals.success_msg = req.flash('success_msg');
+  res.locals.error_msg = req.flash('error_msg');
+  res.locals.error = req.flash('error');
+  next();
+});
+
 
 // add middleware for routers
 app.use('/', indexRouter);

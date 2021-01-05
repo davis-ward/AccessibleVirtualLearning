@@ -6,7 +6,8 @@
 <body>
     <div class="login-form-container">
         <div class="container border">
-            <form method="get">
+          <%- include('../partials/messages'); %>
+            <form method="post">
                 <div class="form-group">
                   <label for="emailInput">Email address</label>
                   <input type="email" name="email" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="name@email.com" value="<%= typeof email != 'undefined' ? email : '' %>">

@@ -1,16 +1,25 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
 const db = require('../models');
 const User = db.User;
 const Op = db.Sequelize.Op;
 
 const bcrypt = require('bcryptjs');
+const passport = require('passport');
 
 
 // Login Page
 router.get('/login', function(req, res, next) {
     res.render('pages/login')
+});
+
+router.post('/login', function(req, res, next) {
+    passport.authenticate('local', {
+        successRedirect: '/',
+        failureRedirect: '/users/login',
+        failureFlash: true
+    })(req, res, next);
 });
 
 
@@ -58,33 +67,28 @@ router.post('/register', function(req, res, next) {
                 usertype: usertype
             }
 
-            console.log(newUser);
-
             // hash the password
             bcrypt.genSalt(10 , (err, salt) => bcrypt.hash(newUser.password, salt, (err, hash) => {
                 if(err) throw err;
 
                 newUser.password = hash;
+                console.log(newUser);
                 
                 // add the new user to the database
                 User.create(newUser).then(function() {
                     console.log('New User was added to the database.');
+                    req.flash('success_msg', 'You are now registered. Please log into your account!');
                     res.redirect('/users/login');
                 }).catch(function(err) {
                     console.log(err, 'Something went wrong when adding new User to database');
                 });
             }));
-
             } else {
             console.log('User with same email already exist');
             errors.push({msg: 'Email is already registered'});
             res.render('pages/register', {errors, firstname, lastname, email, usertype});
             }
         });
-
-
-
-
     }
 
 
