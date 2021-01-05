@@ -7,9 +7,18 @@ a {
   color: #00B7FF;
 }
 
-/* /user/login LOGIN FORM STYLES */
+/* /users/login LOGIN FORM STYLES */
 .login-form-container {
   min-height: 100vh;
   display: flex;
   align-items: center;
 }
+
+/* /users/register REGISTER FORM STYLES */
+.register-form-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+
