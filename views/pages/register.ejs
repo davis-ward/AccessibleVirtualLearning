@@ -10,19 +10,20 @@
             <form method="post">
                 <div class="form-group">
                     <label for="firstNameInput">First Name</label>
-                    <input type="text" name="firstname" class="form-control" id="firstNameInput" placeholder="John" aria-describedby="firstNameHelp">
+                    <input type="text" name="firstname" class="form-control" id="firstNameInput" placeholder="John" aria-describedby="firstNameHelp" value="<%= typeof firstname != 'undefined' ? firstname : '' %>">
                 </div>
                 <div class="form-group">
                     <label for="lastNameInput">Last Name</label>
-                    <input type="text" name="lastname" class="form-control" id="lastNameInput" placeholder="Smith" aria-describedby="lastNameHelp">
+                    <input type="text" name="lastname" class="form-control" id="lastNameInput" placeholder="Smith" aria-describedby="lastNameHelp" value="<%= typeof lastname != 'undefined' ? lastname : '' %>">
                 </div>
                 <div class="form-group">
                   <label for="emailInput">Email address</label>
-                  <input type="email" name="email" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="name@email.com">
+                  <input type="email" name="email" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="name@email.com" value="<%= typeof email != 'undefined' ? email : '' %>">
                 </div>
                 <div class="form-group">
                   <label for="passwordInput">Password</label>
                   <input type="password" name="password" class="form-control" id="passwordInput" placeholder="********" aria-describedby="passwordHelp">
+                  <small class="form-text">Password must be at least 6 characters.</small>
                 </div>
                 <div class="form-group">
                   <label>Student or Educator?</label>

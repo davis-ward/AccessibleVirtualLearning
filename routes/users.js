@@ -5,6 +5,8 @@ const db = require('../models');
 const User = db.User;
 const Op = db.Sequelize.Op;
 
+const bcrypt = require('bcryptjs');
+
 
 // Login Page
 router.get('/login', function(req, res, next) {
@@ -18,7 +20,7 @@ router.get('/register', function(req, res, next) {
 });
 
 router.post('/register', function(req, res, next) {
-    console.log(req.body);
+    //console.log(req.body);
     const { firstname, lastname, email, password, usertype} = req.body;
 
     // simple validation checks
@@ -34,26 +36,53 @@ router.post('/register', function(req, res, next) {
     }
 
     if (errors.length > 0) {
-        res.render('pages/register', {errors});
+        res.render('pages/register', {errors, firstname, lastname, email, usertype});
     } else {
         // validation has passed
         console.log('validation has passed.');
 
-        // create a new User
-        const user = {
-            firstname: req.body.firstname,
-            lastname: req.body.lastname,
-            email: req.body.email,
-            password: req.body.password,
-            usertype: req.body.usertype
-        };
+        User.findOne({
+            where: {email: email}
+        }).then(function(user) {
+            console.log(user);
 
-        // save the new User to the database
-        User.create(user).then(function() {
-            console.log('New User was added to the database.');
-        }).catch(function(err) {
-            console.log(err, 'Something went wrong when adding new User to database');
+            // save the new user to the database if they don't already exist
+            if (!user) {
+
+            // create a new user
+            const newUser = {
+                firstname: firstname,
+                lastname: lastname,
+                email: email,
+                password: password,
+                usertype: usertype
+            }
+
+            console.log(newUser);
+
+            // hash the password
+            bcrypt.genSalt(10 , (err, salt) => bcrypt.hash(newUser.password, salt, (err, hash) => {
+                if(err) throw err;
+
+                newUser.password = hash;
+                
+                // add the new user to the database
+                User.create(newUser).then(function() {
+                    console.log('New User was added to the database.');
+                    res.redirect('/users/login');
+                }).catch(function(err) {
+                    console.log(err, 'Something went wrong when adding new User to database');
+                });
+            }));
+
+            } else {
+            console.log('User with same email already exist');
+            errors.push({msg: 'Email is already registered'});
+            res.render('pages/register', {errors, firstname, lastname, email, usertype});
+            }
         });
+
+
 
 
     }
