@@ -6,6 +6,7 @@
 <body>
     <div class="register-form-container">
         <div class="container border">
+          <%- include('../partials/messages'); %>
             <form method="post">
                 <div class="form-group">
                     <label for="firstNameInput">First Name</label>
@@ -26,13 +27,13 @@
                 <div class="form-group">
                   <label>Student or Educator?</label>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="relation" id="studentInput" value="student" checked>
+                    <input class="form-check-input" type="radio" name="usertype" id="studentInput" value="student" checked>
                     <label class="form-check-label" for="studentInput">
                       Student
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="relation" id="educatorInput" value="educator">
+                    <input class="form-check-input" type="radio" name="usertype" id="educatorInput" value="educator">
                     <label class="form-check-label" for="educatorInput">
                       Educator
                     </label>
