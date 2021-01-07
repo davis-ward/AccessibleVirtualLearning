@@ -1,24 +1,51 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/* styles for ALL */
+
+* {
+  font-family: "Rubik", sans-serif;
 }
 
-a {
-  color: #00B7FF;
+/* styles for LOGIN PAGE */
+
+@media (min-width: 769px) {
+  #login-content {
+    margin-top: 25vh;
+  }
 }
 
-/* /users/login LOGIN FORM STYLES */
-.login-form-container {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
+#login-form {
+  font-size: 1.2rem;
 }
 
-/* /users/register REGISTER FORM STYLES */
-.register-form-container {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
+#login-form-header {
+  font-size: 1.5rem;
 }
 
+/* styles for REGISTER PAGE */
+#register-form {
+  font-size: 1.2rem;
+}
 
+#register-form-header {
+  font-size: 1.5rem;
+}
+
+@media (min-width: 769px) {
+  #register-content {
+    margin-top: 10vh;
+  }
+
+  #register-logo {
+    margin-top: 15vh;
+  }
+}
+
+/* styles for ALERTS */
+
+.alert {
+  font-size: 1rem;
+}
+
+/* styles for NAVBAR */
+#navbarDropdown{
+  list-style-type: none;
+}

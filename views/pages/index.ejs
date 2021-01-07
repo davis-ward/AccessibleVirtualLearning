@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <%- include('../partials/head'); %>
-    <link rel="stylesheet" href="/stylesheets/navstyle.css">
 </head>
 <body>
     <header>
@@ -10,58 +9,22 @@
     </header>
 
     <main>
-        <div class="jumbotron">
-            <div class="container">
-                <h1 class="display-4">Welcome to AccessibleVirtualLearning <%= firstname %>!</h1>
-                <p class="lead">A platform to teach K-12 students computer science while providing accessibility features.</p>
-                <hr class="my-4">
-                <p>Click to link below to get started and make an account.</p>
-                <a class="btn btn-primary btn-lg" href="login.html" role="button">Get Started</a>
-            </div>
-        </div>
-    
-        <div class="container">
+        <div class="container-md">
             <div class="row">
-                <div class="col">
-                    <img src="/images/user_profile.svg">
-                </div>
-                <div class="col">
-                    <div class="card">
+                <div class="col-8 border">
+                    <div class="card m-5">
                         <div class="card-body">
-                            <h4 class="card-title">Staying Connected</h4>
-                            <p class="card-text">Do you have an account with Accessible Virtual Learning? If not, please make an account to stay connected with us. We would love to learn more about your needs and interest. This also connects you with other students learning through AVL!</p>
-                            <a href="" class="btn btn-primary">Register with AVL</a>
+                          <h5 class="card-title">Welcome to Accessible Virtual Learning <%= firstname %>!</h5>
+                          <p class="card-text">AVL is an accessible learning platform for students and educators. We believe programming and the basics of computer science should be available for all!</p>
                         </div>
-                    </div>
+                      </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title">Learning Resources</h4>
-                            <p class="card-text">Not sure where to start and what to learn? AVL provides many free resources that are perfect for virtual learning and completely for beginniers. No prior experience is required!</p>
-                            <a href="" class="btn btn-primary">Virtual Resources</a>
-                        </div>
-                    </div>
+                <div class="col-4 border m-5">
                 </div>
-                <div class="col">
-                    <img src="/images/mention.svg">
-                </div>
-            <div class="row">
-                <div class="col">
-                    <img src="/images/share.svg">
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title">Exploring Accessibility</h4>
-                            <p class="card-text">AVL is a virtual learning platform that provides many accessibility features. Accessibility is important to us because we want everyone to be able to use this platform. Learning should be for all!</p>
-                            <a href="" class="btn btn-primary">Learn about AVL's Accessibility</a>
-                        </div>
-                    </div>
             </div>
         </div>
     </main>
+
+    <%- include('../partials/footer'); %>
 </body>
 </html>
