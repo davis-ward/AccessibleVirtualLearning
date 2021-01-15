@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <%- include('../partials/head'); %>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@800&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -12,14 +14,26 @@
         <div class="container-md">
             <div class="row">
                 <div class="col-8 border">
-                    <div class="card m-5">
-                        <div class="card-body">
-                          <h5 class="card-title">Welcome to Accessible Virtual Learning <%= firstname %>!</h5>
-                          <p class="card-text">AVL is an accessible learning platform for students and educators. We believe programming and the basics of computer science should be available for all!</p>
-                        </div>
-                      </div>
+                    <div id="index-greeting">
+                        <p>Hi, nice</p>
+                        <p>to see you,</p>
+                        <p id="index-users-name"><%= firstname %></p>
+                    </div>
                 </div>
-                <div class="col-4 border m-5">
+                <div class="col-4 border">
+                    <img src="images/focused_working.svg" class="img-fluid">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4 border">
+                    a
+                </div>
+                <div class="col-4 border">
+                    a
+                </div>
+                <div class="col-4 border">
+                    
                 </div>
             </div>
         </div>
