@@ -4,34 +4,56 @@
   font-family: "Rubik", sans-serif;
 }
 
+/* styles for NAVBAR */
+
+.navbar {
+  font-size: 1.8rem;
+}
+
+.nav-item {
+  margin-right: 30px;
+}
+
+#navbarDropdown .dropdown-menu .dropdown-item{
+  font-size: 1.8rem;
+}
+
 /* styles for LOGIN PAGE */
 
 @media (min-width: 769px) {
   #login-content {
-    margin-top: 25vh;
+    margin-top: 20vh;
   }
 }
 
 #login-form {
-  font-size: 1.2rem;
+  font-size: 1.8rem;
 }
 
 #login-form-header {
+  font-size: 2rem;
+}
+
+#login-button {
   font-size: 1.5rem;
 }
 
 /* styles for REGISTER PAGE */
 #register-form {
-  font-size: 1.2rem;
+  font-size: 1.8rem;
 }
 
 #register-form-header {
+  font-size: 2rem;
+}
+
+#register-button {
   font-size: 1.5rem;
 }
 
 @media (min-width: 769px) {
   #register-content {
-    margin-top: 10vh;
+    margin-top: 5vh;
   }
 
   #register-logo {
@@ -51,12 +73,51 @@
 }
 
 /* styles for HOMEPAGE */
-#index-greeting {
-  font-size: 3rem;
-  font-family: 'Baloo Paaji 2', cursive;
+
+#index-greeting h1{
   font-weight: 800;
+  font-size: 4rem;
+  font-family: 'Dosis', sans-serif;
+  letter-spacing: 3px;
+  margin: 15vh;
+  color: white;
 }
 
-#index-users-name {
-  color: #81BEFE;
+.index-heading-container {
+  background-color: #1652f0;  
 }
+
+#index-header {
+  font-weight: 600;
+  margin-top: 10vh;
+  font-size: 3rem;
+}
+
+.index-subheader {
+  margin-top: 2vh;
+  font-size: 1.2rem;
+}
+
+.index-img-container {
+  display: block;
+  margin: auto;
+  width: 50%;
+}
+
+.index-col-header {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.index-col-subheader {
+  font-size: 1.2rem;
+}
+
+.index-row-container {
+  margin-top: 200px;
+}
+
+.row .index-col-button {
+  font-size: 1.5rem;
+}
+
