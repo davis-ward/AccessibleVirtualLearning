@@ -39,7 +39,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // add express session middleware
 app.use(
   session({
-    secret: 'brick house',
+    secret: process.env.SECRET_KEY,
     resave: true,
     saveUninitialized: true,
   })
