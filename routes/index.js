@@ -8,3 +8,9 @@ router.get('/', ensureAuthenticated, function(req, res, next) {
 });
 
 module.exports = router;
+
+/* GET resource page. */
+
+router.get('/resources', ensureAuthenticated, function(req, res, next) {
+  res.render('pages/resources');
+});
