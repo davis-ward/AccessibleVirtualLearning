@@ -1,9 +1,0 @@
-{
-    "development": {
-        "username": "root",
-        "password": "Marghitu1",
-        "database": "accessible_virtual_learning",
-        "host": "pca.eng.auburn.edu",
-        "dialect": "mysql"
-    }
-}
