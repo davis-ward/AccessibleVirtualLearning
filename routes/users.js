@@ -3,7 +3,6 @@ const router = express.Router();
 
 const db = require("../models");
 const User = db.User;
-const Op = db.Sequelize.Op;
 
 const bcrypt = require("bcryptjs");
 const passport = require("passport");
@@ -17,7 +16,7 @@ router.get("/login", function (req, res, next) {
 
 router.post("/login", function (req, res, next) {
   passport.authenticate("local", {
-    successRedirect: "/",
+    successRedirect: "/users/dashboard",
     failureRedirect: "/users/login",
     failureFlash: true,
   })(req, res, next);
@@ -119,13 +118,8 @@ router.get("/logout", ensureAuthenticated, function (req, res, next) {
   res.redirect("/users/login");
 });
 
-router.get("/account", ensureAuthenticated, function (req, res, next) {
-  res.render("pages/account", {
-    firstname: req.user.firstname,
-    lastname: req.user.lastname,
-    email: req.user.email,
-    usertype: req.user.usertype,
-  });
+router.get("/dashboard", ensureAuthenticated, function (req, res, next) {
+    res.render("pages/dashboard");
 });
 
 module.exports = router;

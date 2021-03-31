@@ -3,14 +3,14 @@ const router = express.Router();
 const { ensureAuthenticated } = require('../config/auth');
 
 /* GET home page. */
-router.get('/', ensureAuthenticated, function(req, res, next) {
-  res.render('pages/index', { firstname: req.user.firstname });
+router.get('/', function (req, res, next) {
+    res.render('pages/index');
 });
 
 module.exports = router;
 
 /* GET resource page. */
 
-router.get('/resources', ensureAuthenticated, function(req, res, next) {
-  res.render('pages/resources');
+router.get('/resources', ensureAuthenticated, function (req, res, next) {
+    res.render('pages/resources');
 });

@@ -5,61 +5,26 @@
 </head>
 <body>
     <header>
-        <%- include('../partials/header'); %>
+        <%- include('../partials/public-nav'); %>
     </header>
 
     <main>
-        
-        <div class="index-heading-container">
-            <div class="row">
-                <div class="col-12 border">
-                    <div class="text-center" id="index-greeting">
-                        <h1>Hi, nice to see you <%= firstname %>!</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <div class="container-md">
-            <div class="row">
-                <div class="text-center" id="index-header">
-                    <p>Welcome to Accessible Virtual Learning.</p>
-                    <p class="index-subheader">We are a platform that delivers computer science resources to young students while providing accessibility needs.</p>
-                    <p class="index-subheader">So glad you are with us!</p>
+            <div class="row" id="index-main">
+                <div class="col-md-6 col-12 index-general-text" id="index-greeting-container">
+                    <h1>Welcome to Accessible Virtual Learning.</h1>
+                </div>
+                <div class="col-6 index-general-image">
+                    <img class="img-fluid" src="/images/logo.png" id="index-logo">
                 </div>
             </div>
 
-            <div class="row my-5">
-                <div class="col-md-6 col-12">
-                    <p class="index-col-header">
-                        Check out these awesome resources.
-                    </p>
-                    <p class="index-col-subheader">
-                        Don't know where to start? Check out some of these resources to get started learning! Don't feel overwhelmed, you will be a great computer scientist before you know it!
-                    </p>
-                    <button class="btn btn-primary index-col-button">Resources</button>
-                </div>
-                <div class="col-md-6 col-12">
-                    <div class="index-img-container img-fluid">
-                        <img src="/images/index-row-1.svg" class="" alt="image of coder"/>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row my-5">
-                <div class="col-md-6 col-12">
-                    <div class="index-img-container img-fluid">
-                        <img src="/images/index-row-2.svg" class="" alt="image of coder"/>
-                    </div>
-                </div>
-                <div class="col-md-6 col-12">
-                    <p class="index-col-header">
-                        See what we are all about!
-                    </p>
-                    <p class="index-col-subheader">
-                        Want to learn more about Accessible Virtual Learning and it's beginnings? Check out the about page to learn more about us! We love what we do and hope we can provide the most value to you.
-                    </p>
-                    <button class="btn btn-primary index-col-button">About</button>
+            <div class="row" id="index-call-to-action">
+                <div class="col-6 mx-auto shadow-lg" id="index-call-to-action-container">
+                    <h4>New here? Please make an account to get started.</h4>
+                    <hr>
+                    <p>Creating an account allows educators to create courses and students to enroll in courses. We offer both educator and student accounts.</p>
+                    <a href="/users/register" class="btn btn-outline-dark">Register</a>
                 </div>
             </div>
         </div>

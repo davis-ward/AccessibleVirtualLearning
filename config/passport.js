@@ -35,14 +35,11 @@ module.exports = function (passport) {
   );
 
   passport.serializeUser(function (user, done) {
-    console.log("serialize");
-    done(null, user.id);
+    done(null, user.userId);
   });
 
-  passport.deserializeUser(function (id, done) {
-    console.log("serialize");
-    User.findOne({ where: { id: id } }).then((user) => {
-      console.log(user);
+  passport.deserializeUser(function (userId, done) {
+    User.findOne({ where: { userId: userId } }).then((user) => {
       return done(null, user);
     });
   });

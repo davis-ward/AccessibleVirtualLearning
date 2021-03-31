@@ -1,22 +1,48 @@
 /* styles for ALL */
 
+html, body {
+  overflow-x: hidden;
+}
+
 * {
   font-family: "Rubik", sans-serif;
 }
 
-/* styles for NAVBAR */
+/* styles for HEADER partial */
 
 .navbar {
-  font-size: 1.8rem;
+  font-size: 1.2rem;
 }
 
 .nav-item {
-  margin-right: 30px;
+  margin-right: 40px;
 }
 
-#navbarDropdown .dropdown-menu .dropdown-item{
-  font-size: 1.8rem;
+.navbar-dark .navbar-nav .nav-item .nav-link{
+    color: #fbfbff;
 }
+
+.navbar-dark .navbar-nav .nav-item .nav-link:hover{
+    color: #20bf55;
+}
+
+.navbar-nav .btn {
+    border-radius: 0px;
+    font-size: 1.2rem;
+}
+
+
+
+/* styles for FOOTER PARTIAL */
+.footer {
+  width: 100%;
+}
+
+#footer-text {
+  color: #ffffff;
+}
+
+
 
 /* styles for LOGIN PAGE */
 
@@ -67,58 +93,53 @@
   font-size: 1rem;
 }
 
-/* styles for NAVBAR */
-#navbarDropdown{
-  list-style-type: none;
+/* styles for INDEX page */
+
+/* bigger screens */
+@media screen and (min-width: 767px) {
+    #index-main {
+        margin-top: 20vh;
+    }
 }
 
-/* styles for HOMEPAGE */
-
-#index-greeting h1{
-  font-weight: 800;
-  font-size: 4rem;
-  font-family: 'Dosis', sans-serif;
-  letter-spacing: 3px;
-  margin: 15vh;
-  color: white;
+/* smaller screens */
+@media screen and (max-width: 766px) {
+    #index-main {
+        margin-top: 15vh;
+    }
 }
 
-.index-heading-container {
-  background-color: #1652f0;  
+#index-greeting-container {
+    display: flex;
+    align-items: center;
 }
 
-#index-header {
-  font-weight: 600;
-  margin-top: 10vh;
-  font-size: 3rem;
+#index-greeting h1 {
+    font-weight: 500;
 }
 
-.index-subheader {
-  margin-top: 2vh;
-  font-size: 1.2rem;
+#index-call-to-action {
+    margin-top: 80px;
 }
 
-.index-img-container {
-  display: block;
-  margin: auto;
-  width: 50%;
+#index-call-to-action-container {
+    border: solid #A29EE1;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-bottom: 10vh;
 }
 
-.index-col-header {
-  font-size: 1.8rem;
-  font-weight: 500;
+#index-call-to-action .btn {
+    border-radius:0px;
+    font-size: 1.2rem;
+    margin-top: 2vh;
+    border: solid 2px;
 }
 
-.index-col-subheader {
-  font-size: 1.2rem;
-}
-
-.index-row-container {
-  margin-top: 200px;
-}
-
-.row .index-col-button {
-  font-size: 1.5rem;
+#index-learn-img {
+    max-width: 600px;
 }
 
 /* styles for Resources page*/
@@ -166,3 +187,26 @@
   width: 100px;
   height: 100px;
 }
+
+/* styles for CREATE-COURSE-FORM partial */
+#create-course-form {
+  margin-top: 20vh;
+}
+
+#taskInput {
+  height: 30vh;
+}
+
+/* styles for PRIVATE-NAV partial */
+#my-account-icon {
+    margin-right: 10px;
+}
+
+.nav-dropdown-items {
+    font-size: 1.2rem;
+}
+
+#nav-dropdown-container {
+    border: solid 2px white;
+}
+
