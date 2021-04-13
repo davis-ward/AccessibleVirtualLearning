@@ -1,110 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <%- include('../partials/head'); %>
-</head>
-<body>
-  <section class="container-md">
-    <div class="row" id="register-content">
-      <div class="col-md-6 col-sm-12 p-5">
-        <div class="index-logo-container mx-auto">
-          <img
-            src="/images/logo.png"
-            class="img-fluid"
-            alt="logo"
-            id="register-logo"
-          />
-        </div>
-      </div>
-      <div class="col-md-6 col-sm-12 p-5">
-        <form id="register-form" method="post">
-          <h5 class="mb-4 text-center" id="register-form-header">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="25"
-              height="25"
-              fill="currentColor"
-              class="bi bi-person-plus-fill mx-2"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
-              />
-              <path
-                fill-rule="evenodd"
-                d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"
-              /></svg>Member Register
-          </h5>
-          <%- include('../partials/messages'); %>
-          <div class="mb-3">
-            <label for="firstnameInput" class="form-label">First Name</label>
-            <input
-              name="firstname"
-              type="text"
-              class="form-control"
-              id="firstnameInput"
-              aria-describedby="firstnameHelp"
-              value="<%= typeof firstname != 'undefined' ? firstname : '' %>"
-            />
-          </div>
-          <div class="mb-3">
-            <label for="lastnameInput" class="form-label">Last Name</label>
-            <input
-              name="lastname"
-              type="text"
-              class="form-control"
-              id="lastnameInput"
-              aria-describedby="lastnameHelp"
-              value="<%= typeof lastname != 'undefined' ? lastname : '' %>"
-            />
-          </div>
-          <div class="mb-3">
-            <label for="emailInput" class="form-label">Email address</label>
-            <input
-              name="email"
-              type="email"
-              class="form-control"
-              id="emailInput"
-              aria-describedby="emailHelp"
-              value="<%= typeof email != 'undefined' ? email : '' %>"
-            />
-          </div>
-          <div class="mb-3">
-            <label for="passwordInput" class="form-label">Password</label>
-            <input
-              name="password"
-              type="password"
-              class="form-control"
-              id="passwordInput"
-              aria-describedby="passwordHelp"
-            />
-            <div class="form-text">
-              Password must be at least 6 characters.
+    <head>
+        <%- include('../partials/head'); %>
+    </head>
+    <body>
+        <section class="container-md">
+            <div class="row" id="register-content">
+                <div class="col-md-6 col-sm-12 p-5">
+                    <div class="index-logo-container mx-auto">
+                        <img
+                            src="/images/logo.png"
+                            class="img-fluid"
+                            alt="logo"
+                            id="register-logo"
+                        />
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 p-5">
+                    <form id="register-form" method="post">
+                        <h5 class="mb-4 text-center" id="register-form-header">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="25"
+                                height="25"
+                                fill="currentColor"
+                                class="bi bi-person-plus-fill mx-2"
+                                viewBox="0 0 16 16"
+                            >
+                                <path
+                                    d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+                                />
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"
+                                /></svg
+                            >Member Register
+                        </h5>
+                        <%- include('../partials/messages'); %>
+                        <div class="mb-3">
+                            <label for="firstnameInput" class="form-label"
+                                >First Name</label
+                            >
+                            <input
+                                name="firstname"
+                                type="text"
+                                class="form-control"
+                                id="firstnameInput"
+                                aria-describedby="firstnameHelp"
+                                value="<%= typeof firstname != 'undefined' ? firstname : '' %>"
+                            />
+                        </div>
+                        <div class="mb-3">
+                            <label for="lastnameInput" class="form-label"
+                                >Last Name</label
+                            >
+                            <input
+                                name="lastname"
+                                type="text"
+                                class="form-control"
+                                id="lastnameInput"
+                                aria-describedby="lastnameHelp"
+                                value="<%= typeof lastname != 'undefined' ? lastname : '' %>"
+                            />
+                        </div>
+                        <div class="mb-3">
+                            <label for="emailInput" class="form-label"
+                                >Email address</label
+                            >
+                            <input
+                                name="email"
+                                type="email"
+                                class="form-control"
+                                id="emailInput"
+                                aria-describedby="emailHelp"
+                                value="<%= typeof email != 'undefined' ? email : '' %>"
+                            />
+                        </div>
+                        <div class="mb-3">
+                            <label for="passwordInput" class="form-label"
+                                >Password</label
+                            >
+                            <input
+                                name="password"
+                                type="password"
+                                class="form-control"
+                                id="passwordInput"
+                                aria-describedby="passwordHelp"
+                            />
+                            <div class="form-text">
+                                Password must be at least 6 characters.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="usertypeInput" class="form-label"
+                                >Student or Educator?</label
+                            >
+                            <select
+                                class="form-select"
+                                aria-label="Default select example"
+                                id="usertypeInput"
+                                name="usertype"
+                            >
+                                <option selected value="student">
+                                    Student
+                                </option>
+                                <option value="educator">Educator</option>
+                            </select>
+                        </div>
+                        <button
+                            type="submit"
+                            class="btn btn-primary"
+                            id="register-button"
+                        >
+                            Submit
+                        </button>
+                        <div class="form-text text-center my-3">
+                            Already have an Account?
+                            <a
+                                href="/users/login"
+                                aria-describedby="registerHelp"
+                                >Login.</a
+                            >
+                        </div>
+                    </form>
+                </div>
             </div>
-          </div>
-          <div class="mb-3">
-            <label for="usertypeInput" class="form-label"
-              >Student or Educator?</label
-            >
-            <select
-              class="form-select"
-              aria-label="Default select example"
-              id="usertypeInput"
-              name="usertype"
-            >
-              <option selected value="student">Student</option>
-              <option value="educator">Educator</option>
-            </select>
-          </div>
-          <button type="submit" class="btn btn-primary" id="register-button">Submit</button>
-          <div class="form-text text-center my-3">
-            Already have an Account?
-            <a href="/users/login" aria-describedby="registerHelp">Login.</a>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-
-</body>
+        </section>
+    </body>
 </html>

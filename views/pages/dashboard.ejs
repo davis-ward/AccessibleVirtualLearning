@@ -3,13 +3,36 @@
 <head>
     <%- include('../partials/head'); %>
 </head>
-<body>
+<body class="page">
     <header>
         <%- include('../partials/private-nav'); %>
     </header>
 
-    <main>
+    <main class="page-content">
+        <div class="container-md dashboard-container">
+            <h2>Welcome back, <%=firstname%>.</h2>
 
+            <div class="row justify-content-center my-5 my-courses-container">
+                <div class="col-6">
+                    <h5>My Courses</h5>
+                    <%- include('../partials/messages'); %>
+                    <ul>
+                        <% courses.forEach(function(course) { %>
+                            <li>
+                                <%= course.title %>
+                            </li>
+                        <% }); %>
+                    </ul>
+                </div>
+            </div>
+            <div class="row justify-content-center my-5">
+                <div class="col-6 text-center">
+                    <a href="/courses/add" class="btn btn-outline-dark">Create Course</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row"></div>
     </main>
     
     <%- include('../partials/footer'); %>

@@ -3,21 +3,21 @@ const Course = db.Course;
 
 const courseController = {
     create(req, res) {
-        const { title, ageGroup, description, task } = req.body;
+        const { title, ageGroup, description } = req.body;
         const userId = req.user.userId;
-
         let errors = [];
 
-        if (!title || !ageGroup || !description || !task) {
+        if (!title || !ageGroup || !description) {
+            console.log('true')
             errors.push({ msg: 'Please fill in all fields' });
+            res.render('pages/create-course', { errors })
         } else {
             // validation has passed
             const newCourse = {
                 title: title,
                 ageGroup: ageGroup,
                 description: description,
-                task: task,
-                userId: userId,
+                userId: userId
             };
             
             // add the new course to the database
@@ -26,9 +26,9 @@ const courseController = {
                     console.log('New Course was added to the database.');
                     req.flash(
                         'success_msg',
-                        'Your course was succesfully created.'
+                        'Your course was succesfully created. Add units and items by clicking on the course below.'
                     );
-                    res.redirect('/courses/create-course');
+                    res.redirect('/users/dashboard');
                 })
                 .catch(function (err) {
                     console.log(
@@ -48,7 +48,7 @@ const courseController = {
             req.courses = courses;
             next();
         });
-    },
+    }
 };
 
 module.exports = courseController;

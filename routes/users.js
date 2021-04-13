@@ -9,6 +9,8 @@ const passport = require("passport");
 
 const { ensureAuthenticated } = require("../config/auth");
 
+const courseController = require('../controllers/courseController');
+
 // Login Page
 router.get("/login", function (req, res, next) {
   res.render("pages/login");
@@ -115,11 +117,11 @@ router.post("/register", function (req, res, next) {
 router.get("/logout", ensureAuthenticated, function (req, res, next) {
   req.logout();
   req.flash("success_msg", "You have successfully logged out.");
-  res.redirect("/users/login");
+  res.redirect("/");
 });
 
-router.get("/dashboard", ensureAuthenticated, function (req, res, next) {
-    res.render("pages/dashboard");
+router.get("/dashboard", ensureAuthenticated, courseController.myCourses, function (req, res, next) {
+    res.render("pages/dashboard", {firstname: req.user.firstname, courses: req.courses});
 });
 
 module.exports = router;

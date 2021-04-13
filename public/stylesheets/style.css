@@ -8,6 +8,16 @@ html, body {
   font-family: "Rubik", sans-serif;
 }
 
+.page {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.page-content {
+    flex: 1;
+}
+
 /* styles for HEADER partial */
 
 .navbar {
@@ -29,6 +39,10 @@ html, body {
 .navbar-nav .btn {
     border-radius: 0px;
     font-size: 1.2rem;
+}
+
+.navbar .container-md .navbar-brand img{
+    z-index: 100;
 }
 
 
@@ -189,13 +203,29 @@ html, body {
 }
 
 /* styles for CREATE-COURSE-FORM partial */
-#create-course-form {
-  margin-top: 20vh;
+
+#descriptionInput {
+    min-height: 100px;
 }
 
-#taskInput {
-  height: 30vh;
+#create-course-form-container{
+    margin-top: 8rem;    
+    margin-bottom: 20vh;
+    padding: 30px;
 }
+
+#create-course-button{
+    border: solid black 2px;
+}
+
+#create-course-button:hover {
+    background-color: #A29EE1;
+    color: black;
+}
+
+
+
+
 
 /* styles for PRIVATE-NAV partial */
 #my-account-icon {
@@ -206,7 +236,47 @@ html, body {
     font-size: 1.2rem;
 }
 
-#nav-dropdown-container {
-    border: solid 2px white;
+
+/* styles for DASHBOARD page */
+.dashboard-container {
+    margin-top: 8rem;
+}
+
+.dashboard-container h2 {
+    border-left: solid black;
+    padding-left: 0.8rem;
+    animation-duration: 1s;
+    animation-name: greeting-slide-in;
+    margin-left: 30%;
+}
+
+@keyframes greeting-slide-in {
+    from {
+        margin-left: 0%;
+    }
+}
+
+.my-courses-container li {
+    border: solid black 2px; 
+    list-style-type: none;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.my-courses-container li:hover {
+    border: solid #A29EE1 3px;
+}
+
+.dashboard-container a {
+    min-width: 25rem;
+    border: solid black 2px;
+}
+
+.dashboard-container a:hover {
+    background-color: #A29EE1;
+    color: black;
 }
 

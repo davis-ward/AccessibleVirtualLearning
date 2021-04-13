@@ -1,46 +1,41 @@
-<section class="container-md">
+<section class="container-md" id="create-course-form-container">
     <form id="create-course-form" method="post">
-        <h3 class="text-center">Create a Course</h3>
-        <%- include('../partials/messages'); %>
-        <div class="mb-3">
-            <label for="titleInput" class="form-label">Title</label>
-            <input
-                name="title"
-                type="text"
-                id="titleInput"
-                class="form-control"
-            />
+        <h4 class="text-center">Create a Course</h4>
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <%- include('../partials/messages'); %>
+                <div class="mb-3">
+                    <label for="titleInput" class="form-label">Title</label>
+                    <input
+                        name="title"
+                        type="text"
+                        id="titleInput"
+                        class="form-control"
+                    />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="ageGroupInput">Age Group</label>
+                    <select class="form-select form-control" id="ageGroupInput" name="ageGroup">
+                        <option selected>Select what age group this course is for</option>
+                        <option value="Elementary School">Elementary School</option>
+                        <option value="Middle School">Middle School</option>
+                        <option value="High School">High School</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="descriptionInput" class="form-label">Description</label>
+                    <textarea
+                        name="description"
+                        type="text"
+                        id="descriptionInput"
+                        class="form-control"
+                    ></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-outline-dark" id="create-course-button">
+                    Create Course
+                </button>
+            </div>
         </div>
-        <div class="mb-3">
-            <label class="form-label" for="ageGroupInput">Age Group</label>
-            <select class="form-select form-control" id="ageGroupInput">
-                <option selected>Select what age group this course is for</option>
-                <option value="Elementary School">Elementary School</option>
-                <option value="Middle School">Middle School</option>
-                <option value="High School">High School</option>
-            </select>
-        </div>
-        <div class="mb-3">
-            <label for="descriptionInput" class="form-label">Description</label>
-            <input
-                name="description"
-                type="text"
-                id="descriptionInput"
-                class="form-control"
-            />
-        </div>
-        <div class="mb-3">
-            <label for="taskInput" class="form-label">Task</label>
-            <textarea
-                name="task"
-                type="text"
-                id="taskInput"
-                class="form-control"
-            >
-            </textarea>
-        </div>
-        <button type="submit" class="btn btn-primary" id="create-course-button">
-            Submit
-        </button>
     </form>
 </section>

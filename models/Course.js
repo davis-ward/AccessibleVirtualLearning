@@ -24,11 +24,6 @@ module.exports = function(sequelize, Datatypes) {
         description: {
             type: Datatypes.STRING,
             notEmpty: true
-        },
-
-        task: {
-            type: Datatypes.TEXT,
-            notEmpty: true
         }
     });
     return Course;
