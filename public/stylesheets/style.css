@@ -5,7 +5,7 @@ html, body {
 }
 
 * {
-  font-family: "Rubik", sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .page {
@@ -22,23 +22,58 @@ html, body {
 
 .navbar {
   font-size: 1.2rem;
+  box-shadow: 0 3px 6px -6px black;
+  background-color: white;
+  height: 55px;
+}
+
+#nav-background {
+    background-color: white;
+    color:white;
 }
 
 .nav-item {
   margin-right: 40px;
 }
 
-.navbar-dark .navbar-nav .nav-item .nav-link{
-    color: #fbfbff;
+.navbar-light .navbar-nav .nav-item .nav-link{
+    color: black;
+    font-weight: 500;
+    font-size: 1.1rem;
 }
 
-.navbar-dark .navbar-nav .nav-item .nav-link:hover{
-    color: #20bf55;
+.navbar-light .navbar-nav .nav-item .nav-link:hover{
+    border-bottom: solid 2px black;
 }
 
 .navbar-nav .btn {
-    border-radius: 0px;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+#log-in-btn {
+    border: solid 2px black;
+    width: 100px;
+    margin-right: 20px;
+}
+
+#get-started-btn {
+    width: 135px;
+    background-color: #5680E9;
+    border: solid 2px #5680E9;
+} 
+
+#my-account-button {
+    width: 175px;
+    background-color: #5680E9;
+    border: solid 2px #5680E9;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.navbar-nav .btn:hover {
+    box-shadow: black;
 }
 
 .navbar .container-md .navbar-brand img{
@@ -112,7 +147,7 @@ html, body {
 /* bigger screens */
 @media screen and (min-width: 767px) {
     #index-main {
-        margin-top: 20vh;
+        margin-top: 10vh;
     }
 }
 
@@ -128,16 +163,28 @@ html, body {
     align-items: center;
 }
 
-#index-greeting h1 {
-    font-weight: 500;
+.index-general-text .row p {
+    max-width: 400px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
 }
 
+.index-general-text h1 {
+    font-weight: 600;
+    font-size: 4rem;
+}
+
+.index-general-image img {
+    width: 600px;
+}
+
+
 #index-call-to-action {
-    margin-top: 80px;
+    margin-top: 5vh;
 }
 
 #index-call-to-action-container {
-    border: solid #A29EE1;
+    border: solid #5680E9;
     padding-top: 30px;
     padding-bottom: 30px;
     padding-left: 50px;
@@ -145,11 +192,16 @@ html, body {
     margin-bottom: 10vh;
 }
 
+#index-call-to-action-container p {
+    font-family: 'Roboto', sans-serif;
+}
+
 #index-call-to-action .btn {
-    border-radius:0px;
     font-size: 1.2rem;
     margin-top: 2vh;
-    border: solid 2px;
+    background-color: #5680E9;
+    border: solid 1px #5680E9;
+    width: 150px;
 }
 
 #index-learn-img {
@@ -256,7 +308,12 @@ html, body {
     }
 }
 
-.my-courses-container li {
+.collections-grid-container {
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.collections-grid-container li {
     border: solid black 2px; 
     list-style-type: none;
     padding-left: 1rem;
@@ -264,19 +321,84 @@ html, body {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
+    max-width: 20%;
 }
 
-.my-courses-container li:hover {
-    border: solid #A29EE1 3px;
+.collections-grid-container li:hover {
+    border: solid #5680E9 2px;
+    box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
 }
 
-.dashboard-container a {
-    min-width: 25rem;
-    border: solid black 2px;
+
+
+
+
+
+
+
+
+
+.my-courses-container h5 {
+    font-weight: 600;
+    font-size: 1.5rem;
 }
 
-.dashboard-container a:hover {
+.courses-grid-container {
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.courses-grid-container li {
+    border: solid black 2px; 
+    list-style-type: none;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    max-width: 20%;
+}
+
+.courses-grid-container li:hover {
+    border: solid #5680E9 2px;
+    box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
+}
+
+.course-container {
+    border: solid 1px black;
+}
+
+/* styles for EDIT-COURSE page */
+.edit-course-container {
+    margin-top: 5rem;
+}
+
+.edit-course-container h1{
     background-color: #A29EE1;
-    color: black;
+    font-size: 1.8rem;
 }
+
+.edit-course-container .course-information-container {
+    border-left: solid grey 1px;
+    border-right: solid grey 1px;
+    border-bottom: solid grey 1px;
+    padding: 0px;
+}
+
+.unit-form-container {
+    background-color: #EEEEEE;
+}
+
+.create-unit-row button {
+    max-width: 15rem;
+}
+
+.course-information-container p {
+    font-size: 1.2rem;
+}
+
+.unit-form-container h2 {
+    font-size: 1.5rem;
+}
+
 

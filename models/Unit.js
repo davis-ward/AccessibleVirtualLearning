@@ -1,6 +1,6 @@
 module.exports = function(sequelize, Datatypes) {
-    const Course = sequelize.define('Course', {
-        courseId: {
+    const Unit = sequelize.define('Unit', {
+        unitId: {
             autoIncrement: true,
             primaryKey: true,
             type: Datatypes.INTEGER,
@@ -10,14 +10,8 @@ module.exports = function(sequelize, Datatypes) {
         title: {
             type: Datatypes.STRING,
             notEmpty: true,
-            unique: true,
-            allowNull: false
-        },
-
-        ageGroup: {
-            type: Datatypes.STRING,
-            notEmpty: true,
-            allowNull: false
+            allowNull: false,
+            unique: true
         },
 
         description: {
@@ -26,13 +20,12 @@ module.exports = function(sequelize, Datatypes) {
             allowNull: false
         }
     });
-    
-    // a Course has one owner 
-    Course.associate = models => {
-        Course.belongsTo(models.User, {
-            foreignKey: 'userId'
+
+    Unit.associate = models => {
+        Unit.belongsTo(models.Course, {
+            foreignKey: 'courseId'
         });
     }
 
-    return Course;
+    return Unit;
 };

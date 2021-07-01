@@ -11,25 +11,38 @@
     <main class="page-content">
         <div class="container-md dashboard-container">
             <h2>Welcome back, <%=firstname%>.</h2>
+            <%- include('../partials/messages'); %>
 
-            <div class="row justify-content-center my-5 my-courses-container">
-                <div class="col-6">
-                    <h5>My Courses</h5>
-                    <%- include('../partials/messages'); %>
-                    <ul>
-                        <% courses.forEach(function(course) { %>
-                            <li>
-                                <%= course.title %>
-                            </li>
-                        <% }); %>
-                    </ul>
-                </div>
-            </div>
+
+            <ul class="collections-grid-container">
+                <li class="collection-container rounded col-4 m-3" onclick="location.href = '/collections/add';">
+                    Create Collection
+                </li>
+                
+                
+                
+            </ul>
+
+
+            
+            <h5>My Courses</h5>
+
+            <ul class="courses-grid-container row justify-content-start">
+                <% courses.forEach(function(course) { %>
+                    <li class="course-container rounded col-4 m-3" onclick="location.href = '/courses/edit/<%= course.courseId %>';">
+                        <p class="course-card-header"><%= course.title %></p>
+                        <hr>
+                        <p class="course-card-description"><%= course.description %></p>
+                    </li>
+                <% }); %>
+            </ul>
+
             <div class="row justify-content-center my-5">
                 <div class="col-6 text-center">
-                    <a href="/courses/add" class="btn btn-outline-dark">Create Course</a>
+                    <a href="/courses/add" class="btn btn-outline-dark create-course-button">Create Course</a>
                 </div>
             </div>
+            
         </div>
 
         <div class="row"></div>

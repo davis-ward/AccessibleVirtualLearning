@@ -8,8 +8,9 @@ const bcrypt = require("bcryptjs");
 const passport = require("passport");
 
 const { ensureAuthenticated } = require("../config/auth");
+const { ensureTypeEducator } = require("../config/auth");
 
-const courseController = require('../controllers/courseController');
+const dashboardController = require('../controllers/dashboardController');
 
 // Login Page
 router.get("/login", function (req, res, next) {
@@ -120,7 +121,7 @@ router.get("/logout", ensureAuthenticated, function (req, res, next) {
   res.redirect("/");
 });
 
-router.get("/dashboard", ensureAuthenticated, courseController.myCourses, function (req, res, next) {
+router.get("/dashboard", ensureAuthenticated, ensureTypeEducator, dashboardController.myCourses, function (req, res, next) {
     res.render("pages/dashboard", {firstname: req.user.firstname, courses: req.courses});
 });
 
