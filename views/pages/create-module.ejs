@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="page">
+    <header>
+        <%- include('../partials/private-nav'); %>
+    </header>
+
+    <main class="page-content">
+        <section class="container-md">
+            <div class="row justify-content-center">
+                <div class="col-6">
+                    <form class="module-form" method="post">
+                        <h1>Create a Module</h1>
+                        <hr>
+                        <div class="mb-3">
+                            <label for="moduleTypeInput" class="form-label">Type of Module</label>
+                            <select class="form-select" id="moduleTypeInput" name="type">
+                                <option selected>Select a Module Type</option>
+                                <option value="Article">Article</option>
+                                <option value="Course">Course</option>
+                                <option value="Resource">Resource</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="titleInput" class="form-label">Module Title</label>
+                            <input type="text" class="form-control" id="titleInput" name="title">
+                        </div>
+                        <div class="mb-3">
+                            <label for="descriptionInput" class="form-label">Module Description</label>
+                            <textarea type="text" class="form-control" id="descriptionInput" name="description"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="urlInput" class="form-label">Module Url</label>
+                            <input type="text" class="form-control" id="urlInput" name="url">
+                        </div>
+                        <button type="submit" class="btn btn-primary create-unit-button text-center">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <%- include('../partials/footer'); %>
+</body>
+</html>

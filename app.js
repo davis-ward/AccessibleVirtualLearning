@@ -10,8 +10,7 @@ const passport = require('passport');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const coursesRouter = require('./routes/courses');
-const collectionsRouter = require('./routes/collections');
+const modulesRouter = require('./routes/modules');
 
 // Passport config
 require('./config/passport')(passport);
@@ -66,8 +65,7 @@ app.use((req, res, next) => {
 // add middleware for routers
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/courses', coursesRouter);
-app.use('/collections', collectionsRouter);
+app.use('/modules', modulesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

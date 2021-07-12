@@ -1,6 +1,6 @@
 module.exports = function(sequelize, Datatypes) {
-    const Collection = sequelize.define('Collection', {
-        collectionId: {
+    const Module = sequelize.define('Module', {
+        moduleId: {
             autoIncrement: true,
             primaryKey: true,
             type: Datatypes.INTEGER,
@@ -24,15 +24,21 @@ module.exports = function(sequelize, Datatypes) {
             type: Datatypes.STRING,
             notEmpty: true,
             allowNull: false
+        },
+
+        type: {
+            type: Datatypes.STRING,
+            notEmpty: true,
+            allowNull: false
         }
     });
     
     // a Course has one owner 
-    Collection.associate = models => {
-        Collection.belongsTo(models.User, {
+    Module.associate = models => {
+        Module.belongsTo(models.User, {
             foreignKey: 'userId'
         });
     }
 
-    return Collection;
+    return Module;
 };

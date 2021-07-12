@@ -128,12 +128,12 @@ const dashboardController = {
     },
 
     addCollection(req, res) {
-        const { title, description, url } = req.body;
+        const { title, description, url, resourceType } = req.body;
         const userId = req.user.userId;
 
         let errors = [];
 
-        if (!title | !description | !url ) {
+        if (!title | !description | !url | !resourceType) {
              errors.push({ msg: 'Please fill in all the fields to add a collection.' })
              res.render('pages/create-collection', {errors});
         } else {
@@ -161,6 +161,16 @@ const dashboardController = {
                 });
         }
     },
+
+    getMyCollections(req, res) {
+        Collection.findAll({
+            where: {
+                userId: req.user.userId
+            }
+        }).then(function(collections) {
+            res.redirect('/users/dashboard', collections)
+        });
+    }
 };
 
 module.exports = dashboardController;

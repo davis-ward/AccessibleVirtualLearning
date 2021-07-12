@@ -10,7 +10,7 @@ const passport = require("passport");
 const { ensureAuthenticated } = require("../config/auth");
 const { ensureTypeEducator } = require("../config/auth");
 
-const dashboardController = require('../controllers/dashboardController');
+const moduleController = require('../controllers/moduleController');
 
 // Login Page
 router.get("/login", function (req, res, next) {
@@ -121,8 +121,6 @@ router.get("/logout", ensureAuthenticated, function (req, res, next) {
   res.redirect("/");
 });
 
-router.get("/dashboard", ensureAuthenticated, ensureTypeEducator, dashboardController.myCourses, function (req, res, next) {
-    res.render("pages/dashboard", {firstname: req.user.firstname, courses: req.courses});
-});
+router.get("/dashboard", ensureAuthenticated, ensureTypeEducator, moduleController.getEducatorModules);
 
 module.exports = router;

@@ -10,42 +10,37 @@
 
     <main class="page-content">
         <div class="container-md dashboard-container">
-            <h2>Welcome back, <%=firstname%>.</h2>
             <%- include('../partials/messages'); %>
 
+            <h1>Dashboard</h1>
+            <a class="btn btn-primary" href="/modules/create" role="button">Create a Module</a>
 
-            <ul class="collections-grid-container">
-                <li class="collection-container rounded col-4 m-3" onclick="location.href = '/collections/add';">
-                    Create Collection
-                </li>
-                
-                
-                
-            </ul>
+            <ul class="collection-flex-container">
+                    <% modules.forEach(function (module) { %>
 
 
-            
-            <h5>My Courses</h5>
-
-            <ul class="courses-grid-container row justify-content-start">
-                <% courses.forEach(function(course) { %>
-                    <li class="course-container rounded col-4 m-3" onclick="location.href = '/courses/edit/<%= course.courseId %>';">
-                        <p class="course-card-header"><%= course.title %></p>
-                        <hr>
-                        <p class="course-card-description"><%= course.description %></p>
+                    <li class="collection-container p-3">
+                        <div class="collection-text">
+                            <h2>
+                                <a href="#"><%= module.title %></a>
+                            </h2>
+                            <p><%= module.description %></p>
+                            <div class="collection-small">
+                                <hr>
+                                <i aria-hidden="true" title="Time this resource was posted" class="far fa-calendar"></i>
+                                <span class="visually-hidden">Time this resource was posted:</span>
+                                <span><%= module.createdAt %></span>
+                                <i aria-hidden="true" title="Author that posted this resource" class="far fa-user"></i>
+                                <span class="visually-hidden">Author that posted this resource:</span>
+                            </div>
+                        </div>
                     </li>
-                <% }); %>
-            </ul>
 
-            <div class="row justify-content-center my-5">
-                <div class="col-6 text-center">
-                    <a href="/courses/add" class="btn btn-outline-dark create-course-button">Create Course</a>
-                </div>
-            </div>
+                    <% }); %>
+            </ul>
             
         </div>
 
-        <div class="row"></div>
     </main>
     
     <%- include('../partials/footer'); %>
