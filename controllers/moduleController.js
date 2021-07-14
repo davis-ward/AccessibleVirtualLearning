@@ -1,5 +1,6 @@
 const db = require('../models');
 const Module = db.Module;
+const User = db.User;
 
 const moduleController = {
     createModule(req, res) {
@@ -38,12 +39,30 @@ const moduleController = {
         }
     },
 
+    deleteModule(req, res) {
+        Module.destroy({
+            where: {
+                moduleId: req.params.id
+            }
+        }).then(function (){
+            console.log(`Module ${req.params.id} was succesfully removed.`);
+            req.flash(
+                'success_msg',
+                'Your module was successfuly deleted.'
+            );
+            res.redirect('/users/dashboard');
+        }).catch(function (err) {
+            console.log(err);
+        });
+    },
+
     getEducatorModules(req, res) {
         const userId = req.user.userId;
         Module.findAll({
             where: {
                 userId: userId
-            }
+            },
+            include: User
         }).then(function(modules) {
             console.log('success');
             res.render('pages/dashboard', {modules});

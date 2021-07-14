@@ -17,8 +17,8 @@
                         <hr>
                         <div class="mb-3">
                             <label for="moduleTypeInput" class="form-label">Type of Module</label>
-                            <select class="form-select" id="moduleTypeInput" name="type">
-                                <option selected>Select a Module Type</option>
+                            <select class="form-select" id="moduleTypeInput" name="type" required>
+                                <option selected value="">Select a Module Type</option>
                                 <option value="Article">Article</option>
                                 <option value="Course">Course</option>
                                 <option value="Resource">Resource</option>
@@ -26,17 +26,17 @@
                         </div>
                         <div class="mb-3">
                             <label for="titleInput" class="form-label">Module Title</label>
-                            <input type="text" class="form-control" id="titleInput" name="title">
+                            <input type="text" class="form-control" id="titleInput" name="title" required>
                         </div>
                         <div class="mb-3">
                             <label for="descriptionInput" class="form-label">Module Description</label>
-                            <textarea type="text" class="form-control" id="descriptionInput" name="description"></textarea>
+                            <textarea type="text" class="form-control" id="descriptionInput" name="description" required></textarea>
                         </div>
                         <div class="mb-3">
                             <label for="urlInput" class="form-label">Module Url</label>
-                            <input type="text" class="form-control" id="urlInput" name="url">
+                            <input type="text" class="form-control" id="urlInput" name="url" required>
                         </div>
-                        <button type="submit" class="btn btn-primary create-unit-button text-center">Submit</button>
+                        <button type="submit" class="btn btn-primary create-unit-button text-center" >Submit</button>
                     </form>
                 </div>
             </div>

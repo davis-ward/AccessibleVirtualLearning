@@ -25,7 +25,7 @@ html, body {
   height: 55px;
 }
 
-.nav-item {
+.me-auto .nav-item {
   margin-right: 40px;
 }
 
@@ -35,7 +35,7 @@ html, body {
     font-size: 1.2rem;
 }
 
-.navbar-light .navbar-nav .nav-item .nav-link:hover{
+.navbar-light .me-auto .nav-item .nav-link:hover{
     transition: .15s ease-in;
     transform: translatey(-3px);
 }
@@ -59,11 +59,9 @@ html, body {
 
 #my-account-button {
     width: 175px;
-    background-color: #5680E9;
-    border: solid 2px #5680E9;
-    color: white;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 600;
+    border: solid black 2px;
 }
 
 .navbar-nav .btn:hover {
@@ -72,6 +70,12 @@ html, body {
 
 .navbar .container-md .navbar-brand img{
     z-index: 100;
+}
+
+@media only screen and (max-width: 991px) {
+    .navbar-collapse {
+        background-color: grey;
+    }
 }
 
 
@@ -285,67 +289,95 @@ html, body {
 
 /* styles for DASHBOARD page */
 .dashboard-container {
-    margin-top: 8rem;
+    margin-top: 5rem;
 }
 
-.collection-flex-container {
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: flex-start;
+.dashboard-container h1 {
+    margin-bottom: 3rem;
+}
+
+.dashboard-container .module-header {
+    display: flex;
+    align-items: center;
+}
+
+.module-header  h2 {
+    margin-right: 1rem;
+}
+
+.module-flex-container {
    padding-left: 0;
    margin-bottom: 0;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
 }
 
-.collection-container {
+.module-container {
     list-style: none;
-    background-color: rgba(0,0,0,.04);
+    background-color: rgba(0,0,0,.05);
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;  
     border-radius: 15px;
     transition: .15s ease-in;
-    position: relative;
-    max-width: 33%;
+    flex: 1 0 375px;
+    max-width: 40%;
+    margin: 1rem;
     display: flex;
     flex-direction: column;
-    flex: 0 0 30%;
-    min-width: 250px;
-    margin: 1rem;
 }
 
-.collection-container .collection-text {
+@media only screen and (max-width: 700px) {
+    .module-container {
+        margin: 0.5rem;
+        max-width: 100%;
+    }
+}
+
+.module-container .module-text {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    max-height: 500px;
 }
 
-.collection-container .collection-text p {
+.module-container .module-text p {
     overflow: auto;
+    max-height: 600px;
 }
 
-.collection-container .collection-text :last-child {
+.module-small {
     margin-top: auto;
 }
 
-.collection-container .collection-text :nth-last-child(2) {
-    margin-bottom: 0.75rem;
+.module-footer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
-.collection-container .collection-text > * + * {
-    margin-top: 0.75rem;
+.module-footer .module-button {
+    margin-left: auto;
 }
 
-.collection-container:focus-within, .collection-container:hover {
+.module-container:focus-within, .module-container:hover {
     transform: translatey(-5px);
     box-shadow: 0 0 0 2px #5680E9, rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
 /* fallback focus style for older browsers */
-.collection-container:focus-within a:focus, .collection-container a {
+.module-container:focus-within a:focus, .module-container a {
     text-decoration: none;
 }
 
-.collection-container a:focus {
+.module-container a:focus {
     text-decoration: underline;
+}
+
+.post-date {
+    margin-right: 0.5rem;
+}
+
+.delete-module-button {
+    float: right;
 }
 
 
@@ -360,5 +392,17 @@ html, body {
     border-radius: 1rem;
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px; 
 }
+
+
+
+
+
+
+
+.card-img-top {
+    
+}
+
+
 
 

@@ -121,6 +121,10 @@ router.get("/logout", ensureAuthenticated, function (req, res, next) {
   res.redirect("/");
 });
 
-router.get("/dashboard", ensureAuthenticated, ensureTypeEducator, moduleController.getEducatorModules);
+router.get("/dashboard", ensureAuthenticated, moduleController.getEducatorModules);
+
+router.get("/home", ensureAuthenticated, function(req, res, next) {
+    res.render('pages/index-private');
+});
 
 module.exports = router;

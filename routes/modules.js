@@ -13,6 +13,8 @@ router.get('/create', ensureAuthenticated, function(req, res){
 
 router.post('/create', ensureAuthenticated, moduleController.createModule);
 
+router.get('/:id/delete', ensureAuthenticated, moduleController.deleteModule);
+
 
 
 module.exports = router;

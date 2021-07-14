@@ -15,8 +15,7 @@
             <h1>Dashboard</h1>
             
             <div class="module-header">
-                <h2>My Modules</h2>
-                <a class="btn btn-warning" href="/modules/create" role="button">Create a Module</a>
+                <h2>Modules</h2>
             </div>
 
             <hr>
@@ -43,9 +42,6 @@
                                         <i aria-hidden="true" title="Author that posted this resource" class="far fa-user"></i>
                                         <span class="visually-hidden">Author that posted this resource:</span>
                                         <span><%= module.User.firstname %> <%= module.User.lastname %></span>
-                                    </div>
-                                    <div class="module-button">
-                                        <a class="btn btn-danger delete-module-button" tabindex=0 role="button" href="/modules/<%= module.moduleId %>/delete" onclick="return confirm('Are you sure you want to delete this module?')">Delete</a>
                                     </div>
                                 </div>
                             </div>
