@@ -10,15 +10,17 @@ const moduleController = {
         let errors = [];
 
         if (!title | !description | !url | !type) {
-             errors.push({ msg: 'Please fill in all the fields to add a collection.' })
-             res.render('pages/create-module', {errors});
+            errors.push({
+                msg: 'Please fill in all the fields to add a collection.',
+            });
+            res.render('pages/create-module', { errors });
         } else {
             const newModule = {
                 title: title,
                 type: type,
                 description: description,
                 url: url,
-                userId: userId
+                userId: userId,
             };
 
             Module.create(newModule)
@@ -42,47 +44,53 @@ const moduleController = {
     deleteModule(req, res) {
         Module.destroy({
             where: {
-                moduleId: req.params.id
-            }
-        }).then(function (){
-            console.log(`Module ${req.params.id} was succesfully removed.`);
-            req.flash(
-                'success_msg',
-                'Your module was successfuly deleted.'
-            );
-            res.redirect('/users/dashboard');
-        }).catch(function (err) {
-            console.log(err);
-        });
+                moduleId: req.params.id,
+            },
+        })
+            .then(function () {
+                console.log(`Module ${req.params.id} was succesfully removed.`);
+                req.flash(
+                    'success_msg',
+                    'Your module was successfuly deleted.'
+                );
+                res.redirect('/users/dashboard');
+            })
+            .catch(function (err) {
+                console.log(err);
+            });
     },
 
     getEducatorModules(req, res, next) {
         const userId = req.user.userId;
         Module.findAll({
             where: {
-                userId: userId
+                userId: userId,
             },
-            include: User
-        }).then(function(modules) {
-            console.log('success');
-            res.locals.educatorModules = modules;
-            next();
-        }).catch(function (err) {
-            console.log(err);
-        });
+            include: User,
+        })
+            .then(function (modules) {
+                console.log('success');
+                res.locals.educatorModules = modules;
+                next();
+            })
+            .catch(function (err) {
+                console.log(err);
+            });
     },
 
     getAllModules(req, res, next) {
         Module.findAll({
-            include: User
-        }).then(function(modules) {
-            console.log('success');
-            res.locals.allModules = modules;
-            next();
-        }).catch(function (err) {
-            console.log(err);
-        });
-    }
+            include: User,
+        })
+            .then(function (modules) {
+                console.log('success');
+                res.locals.allModules = modules;
+                next();
+            })
+            .catch(function (err) {
+                console.log(err);
+            });
+    },
 };
 
 module.exports = moduleController;

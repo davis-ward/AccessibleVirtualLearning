@@ -1,7 +1,8 @@
 /* styles for ALL */
 
-html, body {
-  overflow-x: hidden;
+html,
+body {
+    overflow-x: hidden;
 }
 
 * {
@@ -21,22 +22,22 @@ html, body {
 /* styles for NAVBAR */
 
 .navbar {
-  box-shadow: 0 3px 6px -6px black;
-  height: 55px;
+    box-shadow: 0 3px 6px -6px black;
+    height: 55px;
 }
 
 .me-auto .nav-item {
-  margin-right: 40px;
+    margin-right: 40px;
 }
 
-.navbar-light .navbar-nav .nav-item .nav-link{
+.navbar-light .navbar-nav .nav-item .nav-link {
     color: black;
     font-weight: 400;
     font-size: 1.2rem;
 }
 
-.navbar-light .me-auto .nav-item .nav-link:hover{
-    transition: .15s ease-in;
+.navbar-light .me-auto .nav-item .nav-link:hover {
+    transition: 0.15s ease-in;
     transform: translatey(-3px);
 }
 
@@ -53,9 +54,9 @@ html, body {
 
 #get-started-btn {
     width: 135px;
-    background-color: #5680E9;
-    border: solid 2px #5680E9;
-} 
+    background-color: #5680e9;
+    border: solid 2px #5680e9;
+}
 
 #my-account-button {
     width: 175px;
@@ -68,7 +69,7 @@ html, body {
     box-shadow: black;
 }
 
-.navbar .container-md .navbar-brand img{
+.navbar .container-md .navbar-brand img {
     z-index: 100;
 }
 
@@ -78,66 +79,62 @@ html, body {
     }
 }
 
-
-
 /* styles for FOOTER */
 .footer {
-  width: 100%;
+    width: 100%;
 }
 
 #footer-text {
-  color: #ffffff;
+    color: #ffffff;
 }
-
-
 
 /* styles for LOGIN PAGE */
 
 @media (min-width: 769px) {
-  #login-content {
-    margin-top: 20vh;
-  }
+    #login-content {
+        margin-top: 20vh;
+    }
 }
 
 #login-form {
-  font-size: 1.8rem;
+    font-size: 1.8rem;
 }
 
 #login-form-header {
-  font-size: 2rem;
+    font-size: 2rem;
 }
 
 #login-button {
-  font-size: 1.5rem;
+    font-size: 1.5rem;
 }
 
 /* styles for REGISTER PAGE */
 #register-form {
-  font-size: 1.8rem;
+    font-size: 1.8rem;
 }
 
 #register-form-header {
-  font-size: 2rem;
+    font-size: 2rem;
 }
 
 #register-button {
-  font-size: 1.5rem;
+    font-size: 1.5rem;
 }
 
 @media (min-width: 769px) {
-  #register-content {
-    margin-top: 5vh;
-  }
+    #register-content {
+        margin-top: 5vh;
+    }
 
-  #register-logo {
-    margin-top: 15vh;
-  }
+    #register-logo {
+        margin-top: 15vh;
+    }
 }
 
 /* styles for ALERTS */
 
 .alert {
-  font-size: 1rem;
+    font-size: 1rem;
 }
 
 /* styles for INDEX page */
@@ -175,19 +172,18 @@ html, body {
     width: 600px;
 }
 
-
 #index-call-to-action {
     margin-top: 5vh;
 }
 
 #index-call-to-action-container {
-    border: solid #5680E9;
+    border: solid #5680e9;
     padding-top: 30px;
     padding-bottom: 30px;
     padding-left: 50px;
     padding-right: 50px;
     margin-bottom: 10vh;
-    background-color: rgba(0, 0, 0, .05);
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
 #index-call-to-action-container p {
@@ -197,8 +193,8 @@ html, body {
 #index-call-to-action .btn {
     font-size: 1.2rem;
     margin-top: 2vh;
-    background-color: #5680E9;
-    border: solid 1px #5680E9;
+    background-color: #5680e9;
+    border: solid 1px #5680e9;
     width: 150px;
 }
 
@@ -209,47 +205,47 @@ html, body {
 /* styles for Resources page*/
 
 .card-custom {
-  overflow: hidden;
-  min-height: 450px;
-  box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
+    overflow: hidden;
+    min-height: 450px;
+    box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
 }
 
 .card-custom-img {
-  height: 200px;
-  min-height: 200px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  border-color: inherit;
+    height: 200px;
+    min-height: 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-color: inherit;
 }
 
 .card-custom-img::after {
-  position: absolute;
-  content: '';
-  top: 161px;
-  left: 0;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-top-width: 40px;
-  border-right-width: 0;
-  border-bottom-width: 0;
-  border-left-width: 545px;
-  border-left-width: calc(575px - 5vw);
-  border-top-color: transparent;
-  border-right-color: transparent;
-  border-bottom-color: transparent;
-  border-left-color: inherit;
+    position: absolute;
+    content: '';
+    top: 161px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-top-width: 40px;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 545px;
+    border-left-width: calc(575px - 5vw);
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: inherit;
 }
 
 .card-custom-avatar img {
-  border-radius: 50%;
-  box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
-  position: absolute;
-  top: 100px;
-  left: 1.25rem;
-  width: 100px;
-  height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
+    position: absolute;
+    top: 100px;
+    left: 1.25rem;
+    width: 100px;
+    height: 100px;
 }
 
 /* styles for CREATE-COURSE-FORM partial */
@@ -258,24 +254,20 @@ html, body {
     min-height: 100px;
 }
 
-#create-course-form-container{
-    margin-top: 8rem;    
+#create-course-form-container {
+    margin-top: 8rem;
     margin-bottom: 20vh;
     padding: 30px;
 }
 
-#create-course-button{
+#create-course-button {
     border: solid black 2px;
 }
 
 #create-course-button:hover {
-    background-color: #A29EE1;
+    background-color: #a29ee1;
     color: black;
 }
-
-
-
-
 
 /* styles for PRIVATE-NAV partial */
 #my-account-icon {
@@ -285,7 +277,6 @@ html, body {
 .nav-dropdown-items {
     font-size: 1.2rem;
 }
-
 
 /* styles for DASHBOARD page */
 .dashboard-container {
@@ -304,24 +295,25 @@ html, body {
     margin-right: 10px;
 }
 
-.module-header  h2 {
+.module-header h2 {
     margin-right: 1rem;
 }
 
 .module-flex-container {
-   padding-left: 0;
-   margin-bottom: 0;
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: center;
+    padding-left: 0;
+    margin-bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .module-container {
     list-style: none;
-    background-color: rgba(0,0,0,.05);
-    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;  
+    background-color: rgba(0, 0, 0, 0.05);
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+        rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
     border-radius: 15px;
-    transition: .15s ease-in;
+    transition: 0.15s ease-in;
     flex: 1 0 375px;
     max-width: 40%;
     margin: 1rem;
@@ -361,13 +353,16 @@ html, body {
     margin-left: auto;
 }
 
-.module-container:focus-within, .module-container:hover {
+.module-container:focus-within,
+.module-container:hover {
     transform: translatey(-5px);
-    box-shadow: 0 0 0 2px #5680E9, rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    box-shadow: 0 0 0 2px #5680e9, rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+        rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
 /* fallback focus style for older browsers */
-.module-container:focus-within a:focus, .module-container a {
+.module-container:focus-within a:focus,
+.module-container a {
     text-decoration: none;
 }
 
@@ -388,36 +383,22 @@ html, body {
 }
 
 .module-type {
-    border: solid 1px rgba(0,0,0,0.5);
+    border: solid 1px rgba(0, 0, 0, 0.5);
     max-width: 100px;
     text-align: center;
     border-radius: 20px;
     margin-bottom: 10px;
 }
 
-
-
-
-
 /* styles for create module page */
 .module-form {
     margin-top: 6rem;
-    background-color: rgba(0,0,0,.05);
+    background-color: rgba(0, 0, 0, 0.05);
     padding: 2rem;
     border-radius: 1rem;
-    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px; 
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+        rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
-
-
-
-
-
-
 
 .card-img-top {
-    
 }
-
-
-
-

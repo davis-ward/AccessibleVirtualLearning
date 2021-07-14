@@ -1,34 +1,34 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
 
-const { ensureAuthenticated } = require("../config/auth");
-const { ensureTypeEducator } = require("../config/auth");
-const { ensureTypeStudent } = require("../config/auth")
+const { ensureAuthenticated } = require('../config/auth');
+const { ensureTypeEducator } = require('../config/auth');
+const { ensureTypeStudent } = require('../config/auth');
 
 const moduleController = require('../controllers/moduleController');
 const userController = require('../controllers/userController');
 
 // Login Page
-router.get("/login", function (req, res, next) {
-  res.render("pages/login");
+router.get('/login', function (req, res, next) {
+    res.render('pages/login');
 });
 
-router.post("/login", userController.loginUser);
+router.post('/login', userController.loginUser);
 
 // Register Page
-router.get("/register", function (req, res, next) {
-  res.render("pages/register");
+router.get('/register', function (req, res, next) {
+    res.render('pages/register');
 });
 
-router.post("/register", userController.registerUser);
+router.post('/register', userController.registerUser);
 
-router.get("/logout", ensureAuthenticated, function (req, res, next) {
-  req.logout();
-  req.flash("success_msg", "You have successfully logged out.");
-  res.redirect("/");
+router.get('/logout', ensureAuthenticated, function (req, res, next) {
+    req.logout();
+    req.flash('success_msg', 'You have successfully logged out.');
+    res.redirect('/');
 });
 
-router.get('/dashboard', ensureAuthenticated, function(req, res) {
+router.get('/dashboard', ensureAuthenticated, function (req, res) {
     if (req.user.usertype === 'educator') {
         res.redirect('/users/educators/dashboard');
     } else {
@@ -36,18 +36,31 @@ router.get('/dashboard', ensureAuthenticated, function(req, res) {
     }
 });
 
-router.get('/students/dashboard', ensureAuthenticated, ensureTypeStudent, moduleController.getAllModules, function(req, res) {
-    allModules = res.locals.allModules;
-    res.render('pages/student-dashboard', {allModules});
-});
+router.get(
+    '/students/dashboard',
+    ensureAuthenticated,
+    ensureTypeStudent,
+    moduleController.getAllModules,
+    function (req, res) {
+        allModules = res.locals.allModules;
+        res.render('pages/student-dashboard', { allModules });
+    }
+);
 
-router.get('/educators/dashboard', ensureAuthenticated, ensureTypeEducator, moduleController.getEducatorModules, moduleController.getAllModules, function(req, res) {
-    educatorModules = res.locals.educatorModules;
-    allModules = res.locals.allModules;
-    res.render('pages/educator-dashboard', {educatorModules, allModules});
-});
+router.get(
+    '/educators/dashboard',
+    ensureAuthenticated,
+    ensureTypeEducator,
+    moduleController.getEducatorModules,
+    moduleController.getAllModules,
+    function (req, res) {
+        educatorModules = res.locals.educatorModules;
+        allModules = res.locals.allModules;
+        res.render('pages/educator-dashboard', { educatorModules, allModules });
+    }
+);
 
-router.get("/home", ensureAuthenticated, function(req, res, next) {
+router.get('/home', ensureAuthenticated, function (req, res, next) {
     res.render('pages/index-private');
 });
 

@@ -1,44 +1,44 @@
-module.exports = function(sequelize, Datatypes) {
+module.exports = function (sequelize, Datatypes) {
     const Module = sequelize.define('Module', {
         moduleId: {
             autoIncrement: true,
             primaryKey: true,
             type: Datatypes.INTEGER,
-            allowNull: false
+            allowNull: false,
         },
 
         title: {
             type: Datatypes.STRING,
             notEmpty: true,
             unique: true,
-            allowNull: false
+            allowNull: false,
         },
 
         description: {
             type: Datatypes.TEXT,
             notEmpty: true,
-            allowNull: false
+            allowNull: false,
         },
 
         url: {
             type: Datatypes.STRING,
             notEmpty: true,
-            allowNull: false
+            allowNull: false,
         },
 
         type: {
             type: Datatypes.STRING,
             notEmpty: true,
-            allowNull: false
-        }
+            allowNull: false,
+        },
     });
-    
-    // a Course has one owner 
-    Module.associate = models => {
+
+    // a Course has one owner
+    Module.associate = (models) => {
         Module.belongsTo(models.User, {
-            foreignKey: 'userId'
+            foreignKey: 'userId',
         });
-    }
+    };
 
     return Module;
 };

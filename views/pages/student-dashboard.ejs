@@ -1,49 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <%- include('../partials/head'); %>
-</head>
-<body class="page">
-    <header>
-        <%- include('../partials/private-nav'); %>
-    </header>
+    <head>
+        <%- include('../partials/head'); %>
+    </head>
+    <body class="page">
+        <header><%- include('../partials/private-nav'); %></header>
 
-    <main class="page-content">
-        <div class="container-md dashboard-container">
-            <%- include('../partials/messages'); %>
+        <main class="page-content">
+            <div class="container-md dashboard-container">
+                <%- include('../partials/messages'); %>
 
-            <h1>Dashboard</h1>
-            
-            <div class="module-header">
-                <h2>Modules<i class="fas fa-cube"></i></h2>
-            </div>
+                <h1>Dashboard</h1>
 
-            <hr>
+                <div class="module-header">
+                    <h2>Modules<i class="fas fa-cube"></i></h2>
+                </div>
 
-            <ul class="module-flex-container">
+                <hr />
+
+                <ul class="module-flex-container">
                     <% allModules.forEach(function (module) { %>
-
 
                     <li class="module-container p-3">
                         <div class="module-text">
                             <span class="visually-hidden">Type of module:</span>
                             <span class="module-type"><%= module.type %></span>
                             <h2>
-                                <a href="<%= module.url %>" target="_blank" rel="noopener noreferrer"><%= module.title %></a>
+                                <a
+                                    href="<%= module.url %>"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    ><%= module.title %></a
+                                >
                             </h2>
                             <p><%= module.description %></p>
                             <div class="module-small">
-                                <hr>
+                                <hr />
                                 <div class="module-footer">
                                     <div class="module-time">
-                                        <i aria-hidden="true" title="Time this resource was posted" class="far fa-calendar"></i>
-                                        <span class="visually-hidden">Time this resource was posted:</span>
-                                        <span class="post-date"><%= module.createdAt %></span>
+                                        <i
+                                            aria-hidden="true"
+                                            title="Time this resource was posted"
+                                            class="far fa-calendar"
+                                        ></i>
+                                        <span class="visually-hidden"
+                                            >Time this resource was
+                                            posted:</span
+                                        >
+                                        <span class="post-date"
+                                            ><%= module.createdAt %></span
+                                        >
                                     </div>
                                     <div class="module-author">
-                                        <i aria-hidden="true" title="Author that posted this resource" class="far fa-user"></i>
-                                        <span class="visually-hidden">Author that posted this resource:</span>
-                                        <span><%= module.User.firstname %> <%= module.User.lastname %></span>
+                                        <i
+                                            aria-hidden="true"
+                                            title="Author that posted this resource"
+                                            class="far fa-user"
+                                        ></i>
+                                        <span class="visually-hidden"
+                                            >Author that posted this
+                                            resource:</span
+                                        >
+                                        <span
+                                            ><%= module.User.firstname %> <%=
+                                            module.User.lastname %></span
+                                        >
                                     </div>
                                 </div>
                             </div>
@@ -51,26 +72,31 @@
                     </li>
 
                     <% }); %>
-            </ul>
-            
-        </div>
+                </ul>
+            </div>
+        </main>
 
-    </main>
+        <script>
+            const dates = document.getElementsByClassName('post-date');
+            for (let i = 0; i < dates.length; i++) {
+                let date = dates[i].textContent;
 
-    <script>
-        const dates = document.getElementsByClassName('post-date');
-        for (let i = 0; i < dates.length; i++) {
-            let date = dates[i].textContent;
+                const formatDate = (date) => {
+                    let options = {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric',
+                    };
+                    return new Date(date).toLocaleDateString(
+                        undefined,
+                        options
+                    );
+                };
 
-            const formatDate = (date) => {
-                let options = { year: "numeric", month: "long", day: "numeric" };
-                return new Date(date).toLocaleDateString(undefined, options);
+                dates[i].textContent = formatDate(date);
             }
+        </script>
 
-            dates[i].textContent = formatDate(date);
-        }
-    </script>
-    
-    <%- include('../partials/footer'); %>
-</body>
+        <%- include('../partials/footer'); %>
+    </body>
 </html>

@@ -1,44 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <%- include('../partials/head'); %>
-</head>
-<body>
-    <header>
-        <%- include('../partials/public-nav'); %>
-    </header>
+    <head>
+        <%- include('../partials/head'); %>
+    </head>
+    <body>
+        <header><%- include('../partials/public-nav'); %></header>
 
-    <main>
-        <div class="container-md">
-            <div class="row" id="index-main">
-                <%- include('../partials/messages'); %>
-                <div class="col-md-6 index-general-text" id="index-greeting-container">
-                    <div class="index-text-container">
-                        <div class="row my-3">
-                            <h1>Learn Accessibly.</h1>
-                        </div>
-                        <div class="row my-3">
-                            <p>Accessible Virtual Learning allows students to access free resources and educators to create and communicate.</p>
+        <main>
+            <div class="container-md">
+                <div class="row" id="index-main">
+                    <%- include('../partials/messages'); %>
+                    <div
+                        class="col-md-6 index-general-text"
+                        id="index-greeting-container"
+                    >
+                        <div class="index-text-container">
+                            <div class="row my-3">
+                                <h1>Learn Accessibly.</h1>
+                            </div>
+                            <div class="row my-3">
+                                <p>
+                                    Accessible Virtual Learning allows students
+                                    to access free resources and educators to
+                                    create and communicate.
+                                </p>
+                            </div>
                         </div>
                     </div>
+                    <div class="col-6 index-general-image">
+                        <img
+                            class="img-fluid"
+                            src="/images/index-page.svg"
+                            id="index-logo"
+                        />
+                    </div>
                 </div>
-                <div class="col-6 index-general-image">
-                    <img class="img-fluid" src="/images/index-page.svg" id="index-logo">
+
+                <div class="row" id="index-call-to-action">
+                    <div
+                        class="col-6 mx-auto shadow-lg"
+                        id="index-call-to-action-container"
+                    >
+                        <h4>New here? Make a free account to get started!</h4>
+                        <hr />
+                        <p>
+                            Creating an account allows educators to create
+                            courses and students to enroll in courses. We offer
+                            both educator and student accounts.
+                        </p>
+                        <a href="/users/register" class="btn btn-primary"
+                            >Register</a
+                        >
+                    </div>
                 </div>
             </div>
+        </main>
 
-            <div class="row" id="index-call-to-action">
-                <div class="col-6 mx-auto shadow-lg" id="index-call-to-action-container">
-                    <h4>New here? Make a free account to get started!</h4>
-                    <hr>
-                    <p>Creating an account allows educators to create courses and students to enroll in courses. We offer both educator and student accounts.</p>
-                    <a href="/users/register" class="btn btn-primary">Register</a>
-                </div>
-            </div>
-
-        </div>
-    </main>
-
-    <%- include('../partials/footer'); %>
-</body>
+        <%- include('../partials/footer'); %>
+    </body>
 </html>
