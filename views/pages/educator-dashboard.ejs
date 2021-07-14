@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="page">
+    <header>
+        <%- include('../partials/private-nav'); %>
+    </header>
+
+    <main class="page-content">
+        <div class="container-md dashboard-container my-modules">
+            <%- include('../partials/messages'); %>
+
+            <h1>Dashboard</h1>
+
+            
+            <div class="module-header">
+                <h2>My Modules<i class="fas fa-cube"></i></h2>
+                <div class="module-buttons">
+                    <a class="btn btn-dark" id="all-modules-button" role="button" tabindex=0>View All Modules</a>
+                    <a class="btn btn-warning" href="/modules/create" role="button">Create a Module</a>
+                </div>
+            </div>
+
+            <hr>
+
+            <ul class="module-flex-container">
+                    <% educatorModules.forEach(function (module) { %>
+
+
+                    <li class="module-container p-3">
+                        <div class="module-text">
+                            <span class="visually-hidden">Type of module:</span>
+                            <span class="module-type"><%= module.type %></span>
+                            <h2>
+                                <a href="<%= module.url %>" target="_blank" rel="noopener noreferrer"><%= module.title %></a>
+                            </h2>
+                            <p><%= module.description %></p>
+                            <div class="module-small">
+                                <hr>
+                                <div class="module-footer">
+                                    <div class="module-time">
+                                        <i aria-hidden="true" title="Time this resource was posted" class="far fa-calendar"></i>
+                                        <span class="visually-hidden">Time this resource was posted:</span>
+                                        <span class="post-date"><%= module.createdAt %></span>
+                                    </div>
+                                    <div class="module-author">
+                                        <i aria-hidden="true" title="Author that posted this resource" class="far fa-user"></i>
+                                        <span class="visually-hidden">Author that posted this resource:</span>
+                                        <span><%= module.User.firstname %> <%= module.User.lastname %></span>
+                                    </div>
+                                    <div class="module-button">
+                                        <a class="btn btn-danger delete-module-button" tabindex=0 role="button" href="/modules/<%= module.moduleId %>/delete" onclick="return confirm('Are you sure you want to delete this module?')">Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <% }); %>
+            </ul>
+            
+        </div>
+
+
+        <div class="container-md dashboard-container all-modules">
+            <%- include('../partials/messages'); %>
+
+            <h1>Dashboard</h1>
+
+            
+            <div class="module-header">
+                <h2>All Modules<i class="fas fa-cube"></i></h2>
+                <div class="module-buttons">
+                    <a class="btn btn-dark" id="my-modules-button" role="button" tabindex=0>View My Modules</a>
+                    <a class="btn btn-warning" href="/modules/create" role="button">Create a Module</a>
+                </div>
+            </div>
+
+            <hr>
+
+            <ul class="module-flex-container">
+                    <% allModules.forEach(function (module) { %>
+
+
+                    <li class="module-container p-3">
+                        <div class="module-text">
+                            <span class="visually-hidden">Type of module:</span>
+                            <span class="module-type"><%= module.type %></span>
+                            <h2>
+                                <a href="<%= module.url %>" target="_blank" rel="noopener noreferrer"><%= module.title %></a>
+                            </h2>
+                            <p><%= module.description %></p>
+                            <div class="module-small">
+                                <hr>
+                                <div class="module-footer">
+                                    <div class="module-time">
+                                        <i aria-hidden="true" title="Time this resource was posted" class="far fa-calendar"></i>
+                                        <span class="visually-hidden">Time this resource was posted:</span>
+                                        <span class="post-date"><%= module.createdAt %></span>
+                                    </div>
+                                    <div class="module-author">
+                                        <i aria-hidden="true" title="Author that posted this resource" class="far fa-user"></i>
+                                        <span class="visually-hidden">Author that posted this resource:</span>
+                                        <span><%= module.User.firstname %> <%= module.User.lastname %></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <% }); %>
+            </ul>
+            
+        </div>
+
+    </main>
+
+    <script>
+        const dates = document.getElementsByClassName('post-date');
+        for (let i = 0; i < dates.length; i++) {
+            let date = dates[i].textContent;
+
+            const formatDate = (date) => {
+                let options = { year: "numeric", month: "long", day: "numeric" };
+                return new Date(date).toLocaleDateString(undefined, options);
+            }
+
+            dates[i].textContent = formatDate(date);
+        }
+    </script>
+
+    <script>
+        const myModulesButton = document.querySelector('#my-modules-button');
+        const allModulesButton = document.querySelector('#all-modules-button');
+        const myModulesView = document.querySelector('.my-modules');
+        const allModulesView = document.querySelector('.all-modules');
+
+        myModulesButton.addEventListener('click', function () {
+            allModulesView.style.display = 'none';
+            myModulesView.style.display = 'block';
+        });
+
+        allModulesButton.addEventListener('click', function () {
+            myModulesView.style.display = 'none';
+            allModulesView.style.display = 'block';
+        });
+    </script>
+    
+    <%- include('../partials/footer'); %>
+</body>
+</html>

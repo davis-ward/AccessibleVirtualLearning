@@ -56,7 +56,7 @@ const moduleController = {
         });
     },
 
-    getEducatorModules(req, res) {
+    getEducatorModules(req, res, next) {
         const userId = req.user.userId;
         Module.findAll({
             where: {
@@ -65,7 +65,20 @@ const moduleController = {
             include: User
         }).then(function(modules) {
             console.log('success');
-            res.render('pages/dashboard', {modules});
+            res.locals.educatorModules = modules;
+            next();
+        }).catch(function (err) {
+            console.log(err);
+        });
+    },
+
+    getAllModules(req, res, next) {
+        Module.findAll({
+            include: User
+        }).then(function(modules) {
+            console.log('success');
+            res.locals.allModules = modules;
+            next();
         }).catch(function (err) {
             console.log(err);
         });

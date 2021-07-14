@@ -17,11 +17,11 @@ module.exports = {
     },
 
     ensureTypeStudent: function(req, res, next) {
-        userType = req.user.userType;
-        if (userType == 'student') {
+        userType = req.user.usertype;
+        if (userType === 'student') {
             return next();
         }
         req.flash('error_msg', 'You must have a student account to view this content.');
-        res.redirect('/users/dashboard');
+        res.redirect('/users/login');
     }
 }
