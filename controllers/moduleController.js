@@ -30,7 +30,7 @@ const moduleController = {
                         'success_msg',
                         'Your module was succesfully created.'
                     );
-                    res.redirect('/users/dashboard');
+                    res.redirect('/users/educators/dashboard');
                 })
                 .catch(function (err) {
                     console.log(
