@@ -402,3 +402,22 @@ body {
 
 .card-img-top {
 }
+
+.voice-nav-container {
+    background-color: black;
+    border-radius: 50%;
+    bottom: 55px;
+    right: 10px;
+    position: fixed;
+    display: inline-block;
+}
+
+.voice-nav-container button {
+    display: table-cell;
+    vertical-align: middle; 
+    text-align: center;
+    height: 75px;
+    width: 75px;
+    text-decoration: none;
+    color: white;
+}
