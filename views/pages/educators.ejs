@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('../partials/head'); %>
+    </head>
+    <body class="page">
+        <header><%- include('../partials/private-nav'); %></header>
+
+        <main class="page-content">
+            <div class="container-md educators-container">
+                <h1>Educators</h1>
+
+                <ul class="educators-flex-container">
+                    <% educators.forEach(function (educator) { %>
+
+                    <li class="educator-container p-3">
+                        <div class="educator-name">
+                            <h2>
+                                <i class="fas fa-chalkboard-teacher"></i>
+                                <a href="/modules/educator/<%= educator.userId %>"><%= educator.firstname %> <%= educator.lastname %></a>
+                            </h2>
+                        </div>
+                        <div class="educator-date">
+                            <span>Joined on </span>
+                            <i class="far fa-calendar"></i>
+                            <span class="post-date"><%= educator.createdAt %></span>
+                        </div>
+                    </li>
+                    <% }); %>
+                </ul>
+            </div>
+        </main>
+
+        <script>
+            const dates = document.getElementsByClassName('post-date');
+            for (let i = 0; i < dates.length; i++) {
+                let date = dates[i].textContent;
+
+                const formatDate = (date) => {
+                    let options = {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric',
+                    };
+                    return new Date(date).toLocaleDateString(
+                        undefined,
+                        options
+                    );
+                };
+
+                dates[i].textContent = formatDate(date);
+            }
+        </script>
+
+        <%- include('../partials/footer'); %>
+    </body>
+</html>
