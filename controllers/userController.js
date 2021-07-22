@@ -99,6 +99,22 @@ const userController = {
             });
         }
     },
+
+    getEducators(req, res, next) {
+        User.findAll({
+            where: {
+                usertype: 'educator'
+            },
+            order: [
+                ['firstname', 'ASC']
+            ]
+        }).then(function (users) {
+            res.locals.educators = users;
+            next();
+        }).catch(function (err) {
+            console.log(err);
+        });
+    }
 };
 
 module.exports = userController;

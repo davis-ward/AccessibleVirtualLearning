@@ -421,3 +421,59 @@ body {
     text-decoration: none;
     color: white;
 }
+
+/* styles for educator page */
+.educators-container {
+    margin-top: 5rem;
+}
+
+.educators-flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+
+
+.educator-container {
+    list-style: none;
+    background-color: rgba(0, 0, 0, 0.05);
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+        rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    border-radius: 15px;
+    transition: 0.15s ease-in;
+    flex: 1 0 80%;
+    margin-bottom: 25px;
+
+    display: flex;
+    align-items: center;
+}
+
+.educator-container .educator-date {
+    font-size: 1.1rem;
+    margin-left: auto;
+}
+
+.educator-container .educator-date i {
+    margin-left: 5px;
+}
+
+.educator-container:focus-within,
+.educator-container:hover {
+    transform: translatey(-5px);
+    box-shadow: 0 0 0 2px #5680e9, rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+        rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+/* fallback focus style for older browsers */
+.educator-container:focus-within a:focus,
+.educator-container a {
+    text-decoration: none;
+}
+
+.educator-container a:focus {
+    text-decoration: underline;
+}

@@ -64,4 +64,9 @@ router.get('/home', ensureAuthenticated, function (req, res, next) {
     res.render('pages/index-private');
 });
 
+router.get('/educators', ensureAuthenticated, userController.getEducators, function(req, res, next) {
+    const educators = res.locals.educators;
+    res.render('pages/educators', { educators });
+});
+
 module.exports = router;

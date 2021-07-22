@@ -30,7 +30,7 @@ const moduleController = {
                         'success_msg',
                         'Your module was succesfully created.'
                     );
-                    res.redirect('/users/dashboard');
+                    res.redirect('/users/educators/dashboard');
                 })
                 .catch(function (err) {
                     console.log(
@@ -91,6 +91,24 @@ const moduleController = {
                 console.log(err);
             });
     },
+
+    getSpecificModules(req, res, next) {
+        const userId = req.params.id;
+        Module.findAll({
+            where: {
+                userId: userId,
+            },
+            include: User,
+        })
+            .then(function (modules) {
+                console.log('success');
+                res.locals.educatorModules = modules;
+                next();
+            })
+            .catch(function (err) {
+                console.log(err);
+            });
+    }
 };
 
 module.exports = moduleController;

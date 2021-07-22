@@ -12,4 +12,9 @@ router.post('/create', ensureAuthenticated, moduleController.createModule);
 
 router.get('/:id/delete', ensureAuthenticated, moduleController.deleteModule);
 
+router.get('/educator/:id', ensureAuthenticated, moduleController.getSpecificModules, function(req, res, next) {
+    const modules = res.locals.educatorModules;
+    res.render('pages/educator-modules', { modules });
+});
+
 module.exports = router;
