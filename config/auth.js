@@ -30,4 +30,14 @@ module.exports = {
         );
         res.redirect('/users/login');
     },
+
+    getUserType: function(req, res, next) {
+        userType = req.user.usertype;
+        if (userType === 'educator') {
+            res.locals.userType = 'educator';
+        } else {
+            res.locals.userType = 'student';
+        }
+        next();
+    }
 };

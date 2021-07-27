@@ -31,9 +31,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/users/educators">Educators</a>
                 </li>
+                <% if (userType === 'educator') { %>
                 <li class="nav-item">
                     <a class="nav-link" href="https://avl-blog.ghost.io/ghost/#/posts">Blog</a>
                 </li>
+                <% } else { %>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://avl-blog.ghost.io">Blog</a>
+                </li>
+                <% } %>
                 <li class="nav-item">
                     <a class="nav-link" href="/resources" id="resources">Resources</a>
                 </li>

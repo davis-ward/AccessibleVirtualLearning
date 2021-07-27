@@ -4,6 +4,7 @@ const router = express.Router();
 const { ensureAuthenticated } = require('../config/auth');
 const { ensureTypeEducator } = require('../config/auth');
 const { ensureTypeStudent } = require('../config/auth');
+const { getUserType } = require('../config/auth');
 
 const moduleController = require('../controllers/moduleController');
 const userController = require('../controllers/userController');
@@ -40,10 +41,12 @@ router.get(
     '/students/dashboard',
     ensureAuthenticated,
     ensureTypeStudent,
+    getUserType,
     moduleController.getAllModules,
     function (req, res) {
         allModules = res.locals.allModules;
-        res.render('pages/student-dashboard', { allModules });
+        userType = res.locals.userType;
+        res.render('pages/student-dashboard', { allModules, userType });
     }
 );
 
@@ -51,12 +54,14 @@ router.get(
     '/educators/dashboard',
     ensureAuthenticated,
     ensureTypeEducator,
+    getUserType,
     moduleController.getEducatorModules,
     moduleController.getAllModules,
     function (req, res) {
         educatorModules = res.locals.educatorModules;
         allModules = res.locals.allModules;
-        res.render('pages/educator-dashboard', { educatorModules, allModules });
+        userType = res.locals.userType;
+        res.render('pages/educator-dashboard', { educatorModules, allModules, userType});
     }
 );
 

@@ -2,6 +2,8 @@ const db = require('../models');
 const Module = db.Module;
 const User = db.User;
 
+const { getUserType } = require('../config/auth');
+
 const moduleController = {
     createModule(req, res) {
         const { title, description, url, type } = req.body;
@@ -13,6 +15,7 @@ const moduleController = {
             errors.push({
                 msg: 'Please fill in all the fields to add a collection.',
             });
+            getUserType(req, res, next);
             res.render('pages/create-module', { errors });
         } else {
             const newModule = {
